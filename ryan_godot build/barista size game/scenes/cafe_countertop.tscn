@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://rkjugw8lm4ai"]
+
+[ext_resource type="PackedScene" uid="uid://busjq5bghwohr" path="res://assets/blender/cafe_countertop2.glb" id="1_pelgf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ggxd"]
+size = Vector3(1.05488, 1.03587, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="cafe_countertop2" parent="." instance=ExtResource("1_pelgf")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cafe_countertop2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cafe_countertop2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00013268, 0.49716, -2.20744e-16)
+shape = SubResource("BoxShape3D_2ggxd")

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://knyx2v63afj6"]
+
+[ext_resource type="PackedScene" uid="uid://dp6n05cab4vg4" path="res://assets/blender/cafe_rat.glb" id="1_kwenr"]
+[ext_resource type="Script" path="res://scenes/cafe_rat.gd" id="2_pyrsv"]
+
+[node name="cafe_rat" instance=ExtResource("1_kwenr")]
+script = ExtResource("2_pyrsv")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(0.775431, -0.178903, -0.601668, -0.0685222)
+bones/0/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.00512573, -0.0147205, -0.631304, 0.775379)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.765462, -0.0683887, -0.0822974, 0.634521)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/rotation = Quaternion(0.107982, 0.0257247, -0.67474, 0.72966)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.704264, 0.0219229, -0.183016, 0.685593)
+bones/6/rotation = Quaternion(-0.0603896, 0.0050645, -0.115057, 0.991509)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(-0.670192, -0.0478871, 0.00817334, 0.740596)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.0108293, -0.146286, -0.61996, 0.7708)
+bones/9/rotation = Quaternion(0.474229, -0.00518943, -0.109133, 0.873596)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(0.770962, 0.0508797, 0.622106, -0.126541)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.62576, 7.83004e-09, -0.145993, 0.766231)
+bones/11/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.0568728, -0.00435653, 0.0603579, 0.996546)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(0.0181452, -0.0344552, 0.391613, 0.919306)
+bones/14/scale = Vector3(1, 1, 1)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "moving"
+
+[node name="rat_death_timer" type="Timer" parent="." index="2"]
+wait_time = 0.221
+
+[connection signal="timeout" from="rat_death_timer" to="." method="_on_timer_timeout"]

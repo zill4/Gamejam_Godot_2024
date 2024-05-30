@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhqof8brbuofg"]
+
+[ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://scenes/cafe_room_2_withback.tscn" id="1_qjd00"]
+[ext_resource type="PackedScene" uid="uid://6jswjgo5jmj2" path="res://scenes/barista_blob_4.tscn" id="2_r607a"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_liojj"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_puwun"]
+sky_material = SubResource("ProceduralSkyMaterial_liojj")
+
+[sub_resource type="Environment" id="Environment_lore7"]
+background_mode = 2
+sky = SubResource("Sky_puwun")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_lore7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0.630436, -1.55079)
+shadow_enabled = true
+
+[node name="cafe_room2_withback" parent="." instance=ExtResource("1_qjd00")]
+
+[node name="player" parent="." instance=ExtResource("2_r607a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.268396, 0.112254, 2.60112)
