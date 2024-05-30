@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://brvtrg6dsjp1"]
 
 [ext_resource type="PackedScene" uid="uid://cyf1hctd5ucsq" path="res://assets/blender/cafe_room.glb" id="1_1j1kt"]
-[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://scenes/cafe_countertop.tscn" id="2_xq41w"]
+[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://scenes/objects/cafe_countertop.tscn" id="2_xq41w"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2yol1"]
 data = PackedVector3Array(-3.9936, 0, 4.9702, 5.294, 0, -4.9704, 5.294, 0, 4.9702, -3.9936, 0, 4.9702, -3.9936, 0, -4.9704, 5.294, 0, -4.9704)

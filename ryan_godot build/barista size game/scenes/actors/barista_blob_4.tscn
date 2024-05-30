@@ -163,7 +163,6 @@ skin = SubResource("Skin_13qlm")
 libraries = {
 "": SubResource("AnimationLibrary_be5ma")
 }
-autoplay = "idle"
 
 [node name="jumpTimer" type="Timer" parent="AnimationPlayer"]
 wait_time = 0.211
@@ -174,8 +173,5 @@ one_shot = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.974582, 0)
 shape = SubResource("SphereShape3D_jj4he")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 1.2734, 1.54223, 0, -1.54223, 1.2734, 0, 9.88895, 6.3245)
 
 [connection signal="timeout" from="AnimationPlayer/jumpTimer" to="." method="_on_jump_timer_timeout"]

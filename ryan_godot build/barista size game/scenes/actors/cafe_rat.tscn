@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://knyx2v63afj6"]
 
 [ext_resource type="PackedScene" uid="uid://dp6n05cab4vg4" path="res://assets/blender/cafe_rat.glb" id="1_kwenr"]
-[ext_resource type="Script" path="res://scenes/cafe_rat.gd" id="2_pyrsv"]
+[ext_resource type="Script" path="res://scripts/cafe_rat.gd" id="2_pyrsv"]
 
 [node name="cafe_rat" instance=ExtResource("1_kwenr")]
 script = ExtResource("2_pyrsv")
