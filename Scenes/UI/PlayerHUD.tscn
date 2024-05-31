@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cg7mwkkcoc0f2"]
+
+[ext_resource type="Script" path="res://Scripts/Characters/PlayerHUD.cs" id="1_205xu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2aiw7"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_efdxu"]
+font_size = 69
+
+[node name="PlayerHud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_205xu")
+
+[node name="Wave" type="Label" parent="."]
+layout_mode = 1
+offset_right = 241.0
+offset_bottom = 101.0
+text = "Wave: 0"
+label_settings = SubResource("LabelSettings_2aiw7")
+
+[node name="RoundTimer" type="Timer" parent="."]
+
+[node name="Message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -450.0
+offset_bottom = 95.0
+grow_horizontal = 0
+text = "Howdy Meow"
+label_settings = SubResource("LabelSettings_efdxu")

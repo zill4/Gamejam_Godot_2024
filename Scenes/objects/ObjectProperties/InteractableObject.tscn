@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Scripts/Objects/InteractableObject.cs" id="1_e4j25"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpvgw"]
-size = Vector3(0.948303, 1, 1)
+size = Vector3(1.47248, 1, 1.55981)
 
 [node name="InteractableObject" type="Area3D"]
 script = ExtResource("1_e4j25")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0258484, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232677, 0, -0.0343018)
 shape = SubResource("BoxShape3D_hpvgw")

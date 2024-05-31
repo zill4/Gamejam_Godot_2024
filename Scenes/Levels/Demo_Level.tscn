@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3e5cwd5mxs1n"]
+[gd_scene load_steps=7 format=3 uid="uid://d3e5cwd5mxs1n"]
 
 [ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://Scenes/level_cafe.tscn" id="1_pdi3k"]
 [ext_resource type="PackedScene" uid="uid://ocwvwwt1i6f0" path="res://Scenes/Characters/Player.tscn" id="2_gd4s0"]
+[ext_resource type="PackedScene" uid="uid://cg7mwkkcoc0f2" path="res://Scenes/UI/PlayerHUD.tscn" id="3_58dwy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_liojj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -28,3 +29,5 @@ shadow_enabled = true
 [node name="level_cafe" parent="." instance=ExtResource("1_pdi3k")]
 
 [node name="player" parent="." instance=ExtResource("2_gd4s0")]
+
+[node name="PlayerHud" parent="." instance=ExtResource("3_58dwy")]
