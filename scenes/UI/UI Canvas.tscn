@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://di25vs7vxhi54"]
+
+[ext_resource type="Script" path="res://scenes/UI/testButtons.gd" id="1_mwoav"]
+
+[node name="UiCanvas" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 61.0
+offset_top = 845.0
+offset_right = -1617.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mwoav")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = 39.0
+offset_right = 42.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press to Add Coffee"
+fit_content = true
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

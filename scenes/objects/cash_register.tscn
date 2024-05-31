@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3h10mrfl4yi0"]
+[gd_scene load_steps=3 format=3 uid="uid://c3h10mrfl4yi0"]
 
 [ext_resource type="PackedScene" uid="uid://drnw708tuxu0r" path="res://assets/blender/cash register.glb" id="1_qx2wq"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_o32vk"]
+size = Vector3(1.10217, 2.25381, 1.44066)
+
 [node name="cash register" instance=ExtResource("1_qx2wq")]
 transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162964, -0.22139, -0.4226)
+shape = SubResource("BoxShape3D_o32vk")

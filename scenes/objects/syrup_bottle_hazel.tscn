@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbn5mey3y176h"]
+
+[ext_resource type="PackedScene" uid="uid://dk5xpp3nbao5m" path="res://assets/blender/syrup bottle.glb" id="1_q3vtw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc0ai"]
+albedo_color = Color(0.690573, 0.333953, 0.0991809, 1)
+
+[node name="syrup bottle2" instance=ExtResource("1_q3vtw")]
+transform = Transform3D(2.22928e-08, 0, -0.17, 0, 0.17, 0, 0.17, 0, 2.22928e-08, 0, 0, 0)
+
+[node name="syrup bottle" parent="." index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_pc0ai")

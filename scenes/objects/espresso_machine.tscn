@@ -1,9 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctq12jqphoo88"]
 
-[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://Assets/blender/espresso machine.glb" id="1_cp7vd"]
-[ext_resource type="PackedScene" uid="uid://hy8t04odf4ad" path="res://Scenes/objects/ObjectProperties/ObjectInteractionTrigger.tscn" id="2_waf7j"]
+[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://assets/blender/espresso machine.glb" id="1_cp7vd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pd3hh"]
+size = Vector3(1.75451, 3.02472, 2.64078)
 
 [node name="espresso machine" instance=ExtResource("1_cp7vd")]
 transform = Transform3D(-9.17939e-09, 0, 0.21, 0, 0.21, 0, -0.21, 0, -9.17939e-09, 0, 0, 0)
 
-[node name="ObjectInteractionTrigger" parent="." index="1" instance=ExtResource("2_waf7j")]
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0.674789, -0.20069, 0.0479889)
+shape = SubResource("BoxShape3D_pd3hh")

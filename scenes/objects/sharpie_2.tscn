@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0231snud8pck"]
+
+[ext_resource type="PackedScene" uid="uid://ccqvj6kpxgupl" path="res://assets/blender/sharpie.glb" id="1_yen2k"]
+
+[node name="sharpie2" instance=ExtResource("1_yen2k")]

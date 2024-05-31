@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhqof8brbuofg"]
+[gd_scene load_steps=7 format=3 uid="uid://dhqof8brbuofg"]
 
-[ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://Scenes/level_cafe.tscn" id="1_qy7im"]
-[ext_resource type="PackedScene" uid="uid://6jswjgo5jmj2" path="res://Scenes/actors/barista_blob_4.tscn" id="2_m8oeo"]
+[ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://scenes/level_cafe.tscn" id="1_qy7im"]
+[ext_resource type="PackedScene" uid="uid://6jswjgo5jmj2" path="res://scenes/actors/barista_blob_4.tscn" id="2_m8oeo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_liojj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -16,6 +16,8 @@ sky = SubResource("Sky_puwun")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_y56xf"]
+
 [node name="Game" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -28,4 +30,11 @@ shadow_enabled = true
 [node name="level_cafe" parent="." instance=ExtResource("1_qy7im")]
 
 [node name="player" parent="." instance=ExtResource("2_m8oeo")]
-transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -0.268396, 0.112254, 2.60112)
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -0.211939, 0.112254, 2.60112)
+
+[node name="Camera3D" type="Camera3D" parent="player"]
+transform = Transform3D(2.38095, 0, 0, 0, 2.10056, 1.12098, 0, -1.12098, 2.10056, 0.229413, 5.91403, 5.2524)
+attributes = SubResource("CameraAttributesPractical_y56xf")
+fov = 37.8493
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
