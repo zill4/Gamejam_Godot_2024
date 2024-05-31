@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmrn0xjqyaej4"]
+
+[ext_resource type="PackedScene" uid="uid://dk5xpp3nbao5m" path="res://assets/blender/syrup bottle.glb" id="1_a3k4k"]
+
+[node name="syrup bottle2" instance=ExtResource("1_a3k4k")]
+transform = Transform3D(2.22928e-08, 0, -0.17, 0, 0.17, 0, 0.17, 0, 2.22928e-08, 0, 0, 0)

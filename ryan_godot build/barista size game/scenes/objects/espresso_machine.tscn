@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctq12jqphoo88"]
+
+[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://assets/blender/espresso machine.glb" id="1_cp7vd"]
+
+[node name="espresso machine" instance=ExtResource("1_cp7vd")]
+transform = Transform3D(-9.17939e-09, 0, 0.21, 0, 0.21, 0, -0.21, 0, -9.17939e-09, 0, 0, 0)
