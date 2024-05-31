@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dv0lg0khf0t1t"
-path="res://.godot/imported/espresso machine.glb-af07d755123e3cf327e2a0429b24c26e.scn"
+path="res://.godot/imported/espresso machine.glb-4300ffcf8f56c96c61f34f167e4d17cd.scn"
 
 [deps]
 
-source_file="res://Assets/blender/espresso machine.glb"
-dest_files=["res://.godot/imported/espresso machine.glb-af07d755123e3cf327e2a0429b24c26e.scn"]
+source_file="res://assets/blender/espresso machine.glb"
+dest_files=["res://.godot/imported/espresso machine.glb-4300ffcf8f56c96c61f34f167e4d17cd.scn"]
 
 [params]
 
