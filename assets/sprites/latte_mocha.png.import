@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cumnp68oqdnv8"
-path.s3tc="res://.godot/imported/latte_mocha.png-38845d5b1473850083a19e052145c3af.s3tc.ctex"
+path.s3tc="res://.godot/imported/latte_mocha.png-ec5d8907433d93429f75a06a686bddec.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/latte_mocha.png"
-dest_files=["res://.godot/imported/latte_mocha.png-38845d5b1473850083a19e052145c3af.s3tc.ctex"]
+source_file="res://Assets/sprites/latte_mocha.png"
+dest_files=["res://.godot/imported/latte_mocha.png-ec5d8907433d93429f75a06a686bddec.s3tc.ctex"]
 
 [params]
 

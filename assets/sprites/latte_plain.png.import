@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsuwlp4oqnxxu"
-path.s3tc="res://.godot/imported/latte_plain.png-60784bbe5128928e5a4d9844f56d2458.s3tc.ctex"
+path.s3tc="res://.godot/imported/latte_plain.png-9b239feaf61c132615ce662cc3099801.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/latte_plain.png"
-dest_files=["res://.godot/imported/latte_plain.png-60784bbe5128928e5a4d9844f56d2458.s3tc.ctex"]
+source_file="res://Assets/sprites/latte_plain.png"
+dest_files=["res://.godot/imported/latte_plain.png-9b239feaf61c132615ce662cc3099801.s3tc.ctex"]
 
 [params]
 

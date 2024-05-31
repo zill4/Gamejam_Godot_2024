@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cke1fypjmpui4"
-path.s3tc="res://.godot/imported/coffee_addMilk.png-72479967304a68122a050dd03692603f.s3tc.ctex"
+path.s3tc="res://.godot/imported/coffee_addMilk.png-68811c2e9150a60d20ef43e3174fea5f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/coffee_addMilk.png"
-dest_files=["res://.godot/imported/coffee_addMilk.png-72479967304a68122a050dd03692603f.s3tc.ctex"]
+source_file="res://Assets/sprites/coffee_addMilk.png"
+dest_files=["res://.godot/imported/coffee_addMilk.png-68811c2e9150a60d20ef43e3174fea5f.s3tc.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buxybremeoqkh"
-path.s3tc="res://.godot/imported/latte_hazelnut.png-f45b9c919b2376b333bea70822b52815.s3tc.ctex"
+path.s3tc="res://.godot/imported/latte_hazelnut.png-e7218a872000bba7d61309f7ffd8093b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/latte_hazelnut.png"
-dest_files=["res://.godot/imported/latte_hazelnut.png-f45b9c919b2376b333bea70822b52815.s3tc.ctex"]
+source_file="res://Assets/sprites/latte_hazelnut.png"
+dest_files=["res://.godot/imported/latte_hazelnut.png-e7218a872000bba7d61309f7ffd8093b.s3tc.ctex"]
 
 [params]
 
