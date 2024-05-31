@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://b6b0q3nmtmsa6"]
 
-[ext_resource type="PackedScene" uid="uid://dphrlmlnvlgbc" path="res://assets/blender/cafe_room2_withback.glb" id="1_26a22"]
-[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://scenes/objects/cafe_countertop.tscn" id="2_bdrc5"]
-[ext_resource type="PackedScene" uid="uid://d4ahykxi7fph8" path="res://scenes/objects/barrel.tscn" id="3_nu4yq"]
-[ext_resource type="PackedScene" uid="uid://bf6nre1k14cbv" path="res://scenes/objects/portal_goop.tscn" id="4_bci18"]
-[ext_resource type="PackedScene" uid="uid://bmrn0xjqyaej4" path="res://scenes/objects/syrup_bottle_2.tscn" id="5_7mudh"]
-[ext_resource type="PackedScene" uid="uid://ctq12jqphoo88" path="res://scenes/objects/espresso_machine.tscn" id="6_gjgns"]
-[ext_resource type="PackedScene" uid="uid://c3h10mrfl4yi0" path="res://scenes/objects/cash_register.tscn" id="7_s018i"]
+[ext_resource type="PackedScene" uid="uid://dphrlmlnvlgbc" path="res://Assets/blender/cafe_room2_withback.glb" id="1_26a22"]
+[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://Scenes/objects/cafe_countertop.tscn" id="2_bdrc5"]
+[ext_resource type="PackedScene" uid="uid://d4ahykxi7fph8" path="res://Scenes/objects/barrel.tscn" id="3_nu4yq"]
+[ext_resource type="PackedScene" uid="uid://bf6nre1k14cbv" path="res://Scenes/objects/portal_goop.tscn" id="4_bci18"]
+[ext_resource type="PackedScene" uid="uid://bmrn0xjqyaej4" path="res://Scenes/objects/syrup_bottle_2.tscn" id="5_7mudh"]
+[ext_resource type="PackedScene" uid="uid://ctq12jqphoo88" path="res://Scenes/objects/espresso_machine.tscn" id="6_gjgns"]
+[ext_resource type="PackedScene" uid="uid://c3h10mrfl4yi0" path="res://Scenes/objects/cash_register.tscn" id="7_s018i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6r1uv"]
 resource_name = "rug2"

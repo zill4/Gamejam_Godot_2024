@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhqof8brbuofg"]
+[gd_scene load_steps=6 format=3 uid="uid://d3e5cwd5mxs1n"]
 
-[ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://Scenes/level_cafe.tscn" id="1_qy7im"]
-[ext_resource type="PackedScene" uid="uid://6jswjgo5jmj2" path="res://Scenes/actors/barista_blob_4.tscn" id="2_m8oeo"]
+[ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://Scenes/level_cafe.tscn" id="1_pdi3k"]
+[ext_resource type="PackedScene" uid="uid://ocwvwwt1i6f0" path="res://Scenes/Characters/Player.tscn" id="2_gd4s0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_liojj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -25,7 +25,6 @@ environment = SubResource("Environment_lore7")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0.630436, -1.55079)
 shadow_enabled = true
 
-[node name="level_cafe" parent="." instance=ExtResource("1_qy7im")]
+[node name="level_cafe" parent="." instance=ExtResource("1_pdi3k")]
 
-[node name="player" parent="." instance=ExtResource("2_m8oeo")]
-transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -0.268396, 0.112254, 2.60112)
+[node name="player" parent="." instance=ExtResource("2_gd4s0")]
