@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnf0cmi7spb5p"]
 
-[ext_resource type="Script" path="res://Scripts/Objects/InteractableObject.cs" id="1_e4j25"]
+[ext_resource type="Script" path="res://Scripts/Objects/InteractionTrigger.cs" id="1_bqma7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hpvgw"]
-size = Vector3(1.47248, 1, 1.55981)
+size = Vector3(2.1793, 1.41101, 1.55981)
 
 [node name="InteractionTrigger" type="Area3D"]
-script = ExtResource("1_e4j25")
+script = ExtResource("1_bqma7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232677, 0, -0.0343018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.586087, 1.27725, -0.0343018)
 shape = SubResource("BoxShape3D_hpvgw")

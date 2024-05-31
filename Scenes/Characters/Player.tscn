@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://ocwvwwt1i6f0"]
+[gd_scene load_steps=12 format=3 uid="uid://ocwvwwt1i6f0"]
 
 [ext_resource type="Animation" uid="uid://b7ssfk3mu3ivt" path="res://Assets/animation rework/idle_rework.res" id="1_grfh1"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player.cs" id="1_o84cx"]
 [ext_resource type="Animation" uid="uid://cw76mskg2bd5y" path="res://Assets/animation rework/jump_rework.res" id="2_7fhqk"]
 [ext_resource type="Animation" uid="uid://camg181by416w" path="res://Assets/animation rework/waddle_rework.res" id="3_e5s55"]
+[ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://Scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="5_5hwnq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avc12"]
 resource_name = "body"
@@ -132,5 +133,8 @@ transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="InteractionTrigger" parent="." instance=ExtResource("5_5hwnq")]
+transform = Transform3D(-0.0026878, 0, 0.999996, 0, 1, 0, -0.999996, 0, -0.0026878, 0.174021, 0, 0)
 
 [connection signal="timeout" from="AnimationPlayer/jumpTimer" to="." method="_on_jump_timer_timeout"]

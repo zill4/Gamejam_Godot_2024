@@ -3,10 +3,8 @@ using System;
 
 public partial class InteractionTrigger : Area3D
 {
-	[Export]
-	public string ObjectName = "Object Name";
 	private PlayerHUD _playerHUD;
-    private Interactable _currentInteractable;
+    private Node _currentInteractable;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{        
@@ -21,20 +19,20 @@ public partial class InteractionTrigger : Area3D
 
     private void OnBodyEntered(Node body)
     {
-        if (body is Interactable interactable) // Assuming Player is the name of your player class
+        if (body.HasMethod("Interact"))
         {
-            GD.Print($"{ObjectName} triggered by {body.Name}");
+            GD.Print($" triggered by {body.Name}");
             // Add your custom logic here
-			_playerHUD.ShowMessage($"Press 'E' to interact with {ObjectName} MEOW");
-            _currentInteractable = interactable;
+			_playerHUD.ShowMessage($"Press 'E' to interact with  MEOW");
+            _currentInteractable = body;
         }
     }
 
     private void OnBodyExited(Node body)
     {
-        if (body is Interactable)
+        if (_currentInteractable == body)
         {
-            GD.Print($"{body.Name} exited {ObjectName}'s trigger area");
+            GD.Print($"{body.Name} exited  trigger area");
             // Add your custom logic here
 			_playerHUD.ShowMessage($"Go find a coffee machine pls :3");
             _currentInteractable = null;
@@ -46,7 +44,7 @@ public partial class InteractionTrigger : Area3D
         // Check if the player pressed the 'E' key
         if (@event is InputEventKey inputEventKey && inputEventKey.Pressed && inputEventKey.Keycode == Key.E)
         {
-            _currentInteractable?.Interact();
+            _currentInteractable.Call("Interact");
         }
     }
 }
