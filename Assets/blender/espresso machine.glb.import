@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dq8urien5cwgo"
-path="res://.godot/imported/portal_goop.glb-12271ebafaeca58ca2798780c5b43744.scn"
+uid="uid://dv0lg0khf0t1t"
+path="res://.godot/imported/espresso machine.glb-af07d755123e3cf327e2a0429b24c26e.scn"
 
 [deps]
 
-source_file="res://assets/blender/portal_goop.glb"
-dest_files=["res://.godot/imported/portal_goop.glb-12271ebafaeca58ca2798780c5b43744.scn"]
+source_file="res://Assets/blender/espresso machine.glb"
+dest_files=["res://.godot/imported/espresso machine.glb-af07d755123e3cf327e2a0429b24c26e.scn"]
 
 [params]
 

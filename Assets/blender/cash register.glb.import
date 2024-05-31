@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dphrlmlnvlgbc"
-path="res://.godot/imported/cafe_room2_withback.glb-9f35277311a897c1d62fe1aa18bbd950.scn"
+uid="uid://drnw708tuxu0r"
+path="res://.godot/imported/cash register.glb-6f7ac92599bd0a2392017b457fd72f8b.scn"
 
 [deps]
 
-source_file="res://assets/blender/cafe_room2_withback.glb"
-dest_files=["res://.godot/imported/cafe_room2_withback.glb-9f35277311a897c1d62fe1aa18bbd950.scn"]
+source_file="res://Assets/blender/cash register.glb"
+dest_files=["res://.godot/imported/cash register.glb-6f7ac92599bd0a2392017b457fd72f8b.scn"]
 
 [params]
 

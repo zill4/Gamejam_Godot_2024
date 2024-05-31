@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dk5xpp3nbao5m"
-path="res://.godot/imported/syrup bottle.glb-32b13fe3be47eaed671298cf78f96325.scn"
+uid="uid://bdmk3lgjowj2i"
+path="res://.godot/imported/espresso machine.glb-03b504b0f2aa94e4e1e799de1277f0d1.scn"
 
 [deps]
 
-source_file="res://assets/blender/syrup bottle.glb"
-dest_files=["res://.godot/imported/syrup bottle.glb-32b13fe3be47eaed671298cf78f96325.scn"]
+source_file="res://Assets/ryan_Blender Assets/espresso machine.glb"
+dest_files=["res://.godot/imported/espresso machine.glb-03b504b0f2aa94e4e1e799de1277f0d1.scn"]
 
 [params]
 

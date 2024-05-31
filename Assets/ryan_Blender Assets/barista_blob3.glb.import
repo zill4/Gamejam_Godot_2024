@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://drnw708tuxu0r"
-path="res://.godot/imported/cash register.glb-40f647db2c5f7477dd6eac344371ab1d.scn"
+uid="uid://opo0k6p78ep5"
+path="res://.godot/imported/barista_blob3.glb-06df8092b96a7955b1f635c70e921dd5.scn"
 
 [deps]
 
-source_file="res://assets/blender/cash register.glb"
-dest_files=["res://.godot/imported/cash register.glb-40f647db2c5f7477dd6eac344371ab1d.scn"]
+source_file="res://Assets/ryan_Blender Assets/barista_blob3.glb"
+dest_files=["res://.godot/imported/barista_blob3.glb-06df8092b96a7955b1f635c70e921dd5.scn"]
 
 [params]
 
