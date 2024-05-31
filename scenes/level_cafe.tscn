@@ -1,0 +1,243 @@
+[gd_scene load_steps=16 format=3 uid="uid://b6b0q3nmtmsa6"]
+
+[ext_resource type="PackedScene" uid="uid://dphrlmlnvlgbc" path="res://assets/blender/cafe_room2_withback.glb" id="1_26a22"]
+[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://scenes/objects/cafe_countertop.tscn" id="2_bdrc5"]
+[ext_resource type="PackedScene" uid="uid://d4ahykxi7fph8" path="res://scenes/objects/barrel.tscn" id="3_nu4yq"]
+[ext_resource type="PackedScene" uid="uid://bf6nre1k14cbv" path="res://scenes/objects/portal_goop.tscn" id="4_bci18"]
+[ext_resource type="PackedScene" uid="uid://ctq12jqphoo88" path="res://scenes/objects/espresso_machine.tscn" id="6_gjgns"]
+[ext_resource type="PackedScene" uid="uid://dbn5mey3y176h" path="res://scenes/objects/syrup_bottle_hazel.tscn" id="7_qp5mn"]
+[ext_resource type="PackedScene" uid="uid://c3h10mrfl4yi0" path="res://scenes/objects/cash_register.tscn" id="7_s018i"]
+[ext_resource type="PackedScene" uid="uid://bmrn0xjqyaej4" path="res://scenes/objects/syrup_bottle_mocha.tscn" id="8_nlulf"]
+[ext_resource type="PackedScene" uid="uid://cme6bdgmc4bdu" path="res://scenes/objects/milk_steamer.tscn" id="9_7loks"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6r1uv"]
+resource_name = "rug2"
+cull_mode = 2
+albedo_color = Color(0.0561998, 0.259354, 0.326659, 1)
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mlgut"]
+_surfaces = [{
+"aabb": AABB(-1.80237, 0, -2.98021, 3.60474, 1e-05, 5.96042),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "rug2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2ognu"]
+resource_name = "cafe_room2_withback_Plane_002"
+_surfaces = [{
+"aabb": AABB(-1.80237, 0, -2.98021, 3.60474, 1e-05, 5.96042),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_6r1uv"),
+"name": "rug2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mlgut")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16hl5"]
+size = Vector3(9.06653, 1, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_u5o6b"]
+data = PackedVector3Array(-2.5343, 0, -1.208, 3.3595, 0, -4.9704, 3.3595, 0, -1.208, -2.5343, 0, -1.208, -2.5343, 0, -4.9704, 3.3595, 0, -4.9704, -2.5343, 0, 4.9702, 3.3595, 0, 1.2078, 3.3595, 0, 4.9702, -2.5343, 0, 4.9702, -2.5343, 0, 1.2078, 3.3595, 0, 1.2078, -2.5343, 0, 1.2078, 3.3595, 0, -1.208, 3.3595, 0, 1.2078, -2.5343, 0, 1.2078, -2.5343, 0, -1.208, 3.3595, 0, -1.208, 3.3595, 0, -1.208, 7.1369, 0, 1.2078, 3.3595, 0, 1.2078, 3.3595, 0, -1.208, 7.1369, 0, -1.208, 7.1369, 0, 1.2078)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sf48d"]
+size = Vector3(0.359375, 0.92041, 0.449463)
+
+[node name="level_cafe" instance=ExtResource("1_26a22")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="blue_rug2" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(-1.20313e-07, 0, 0.522287, 0, 0.426446, 0, -0.426446, 0, -1.47353e-07, -2.77998, 0.00610848, -2.31938)
+mesh = SubResource("ArrayMesh_2ognu")
+skeleton = NodePath("")
+
+[node name="blue_rug3" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(-1.20313e-07, 0, 0.522287, 0, 0.426446, 0, -0.426446, 0, -1.47353e-07, 1, 0.00610848, -2.31938)
+mesh = SubResource("ArrayMesh_2ognu")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cube_002" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7589, 0, 1.0615)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76873, 0, -9.04422)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21024, 0, -9.52957)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.21024, 0, 1.58549)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="4"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10.2645, 0, -2.47325)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="5"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 10.2645, 0, -5.47857)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="6"]
+transform = Transform3D(-0.00549765, 0, 0.999985, 0, 1, 0, -0.999985, 0, -0.00549765, 10.0631, 0, -3.94493)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Cube_002/StaticBody3D" index="7"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.290251, 0, -3.99332)
+shape = SubResource("BoxShape3D_16hl5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="grass_001" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass_001/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_u5o6b")
+
+[node name="counter" type="Node3D" parent="." index="11"]
+
+[node name="Node3D" parent="counter" index="0" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.04616, 0, -1.21445)
+
+[node name="Node3D2" parent="counter" index="1" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04616, 0, -1.21445)
+
+[node name="Node3D3" parent="counter" index="2" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04616, 0, -1.21445)
+
+[node name="Node3D4" parent="counter" index="3" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04616, 0, -1.21445)
+
+[node name="Node3D5" parent="counter" index="4" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0461618, 0, -1.21445)
+
+[node name="Node3D6" parent="counter" index="5" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.953838, 0, -1.21445)
+
+[node name="Node3D7" parent="counter" index="6" instance=ExtResource("2_bdrc5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95384, 0, -1.21445)
+
+[node name="barrels" type="Node3D" parent="." index="12"]
+
+[node name="barrel" parent="barrels" index="0" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(0.79, 0, 0, 0, 0.79, 0, 0, 0, 0.79, -0.779937, 0.57595, -7)
+
+[node name="barrel3" parent="barrels" index="1" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7914, 0.00604677, -7)
+
+[node name="barrel4" parent="barrels" index="2" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7914, 0.00604677, -6.51675)
+
+[node name="barrel7" parent="barrels" index="3" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7914, 0.00604677, -3.97314)
+
+[node name="barrel9" parent="barrels" index="4" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74244, 0.00604677, -1.37085)
+
+[node name="barrel10" parent="barrels" index="5" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.74244, 0.00604677, -0.871848)
+
+[node name="barrel11" parent="barrels" index="6" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33581, 0.00604677, -3.15218)
+
+[node name="barrel18" parent="barrels" index="7" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.33581, 0.573832, -3.15218)
+
+[node name="barrel17" parent="barrels" index="8" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81119, 0.00604677, -3.15218)
+
+[node name="barrel13" parent="barrels" index="9" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.18741, -0.0116699, -0.682244)
+
+[node name="barrel14" parent="barrels" index="10" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34203, -0.0116699, -3.1876)
+
+[node name="barrel16" parent="barrels" index="11" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(0.851077, 0, 0.525041, 0, 1, 0, -0.525041, 0, 0.851077, -3.87558, -0.0116699, -3.1876)
+
+[node name="barrel15" parent="barrels" index="12" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34203, 0.557683, -3.1876)
+
+[node name="barrel6" parent="barrels" index="13" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(0.81, 0, 0, 0, 0.81, 0, 0, 0, 0.81, 0.825392, 0.56878, -6.96194)
+
+[node name="table" type="Node3D" parent="barrels" index="14"]
+
+[node name="barrel12" parent="barrels/table" index="0" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99667, -0.0116699, 1.57145)
+
+[node name="barrel19" parent="barrels/table" index="1" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(2.37, 0, 0, 0, 0.08, 0, 0, 0, 2.3, -3.99667, 0.532859, 1.47674)
+
+[node name="table2" type="Node3D" parent="barrels" index="15"]
+
+[node name="barrel12" parent="barrels/table2" index="0" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21633, -0.0116699, 1.57145)
+
+[node name="barrel19" parent="barrels/table2" index="1" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(2.37, 0, 0, 0, 0.08, 0, 0, 0, 2.3, -1.21633, 0.532859, 1.47674)
+
+[node name="table3" type="Node3D" parent="barrels" index="16"]
+
+[node name="barrel12" parent="barrels/table3" index="0" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56309, -0.0116699, 1.52575)
+
+[node name="barrel19" parent="barrels/table3" index="1" instance=ExtResource("3_nu4yq")]
+transform = Transform3D(2.37, 0, 0, 0, 0.08, 0, 0, 0, 2.3, 1.56309, 0.532859, 1.43104)
+
+[node name="portal_goop" parent="." index="13" instance=ExtResource("4_bci18")]
+transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, -0.0306996, 0.027051, -6.6375)
+
+[node name="espresso machine" parent="." index="14" instance=ExtResource("6_gjgns")]
+transform = Transform3D(-9.17939e-09, 0, 0.21, 0, 0.21, 0, -0.21, 0, -9.17939e-09, 1.0008, 0.805124, -1.66289)
+
+[node name="cash register" parent="." index="15" instance=ExtResource("7_s018i")]
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -3.11928, 0.795601, -1.63326)
+
+[node name="milk_steamer" parent="." index="16" instance=ExtResource("9_7loks")]
+transform = Transform3D(-0.7, 0, 1.05697e-07, 0, 0.7, 0, -1.05697e-07, 0, -0.7, -0.279581, 0.799361, -1.6676)
+
+[node name="hazelnut_syrup" type="Node3D" parent="." index="17"]
+
+[node name="syrup bottle2" parent="hazelnut_syrup" index="0" instance=ExtResource("7_qp5mn")]
+transform = Transform3D(0.112759, 0, 0.127222, 0, 0.17, 0, -0.127222, 0, 0.112759, -1.03308, 0.798991, -1.69662)
+
+[node name="syrup bottle3" parent="hazelnut_syrup" index="1" instance=ExtResource("7_qp5mn")]
+transform = Transform3D(-0.00952227, 0, 0.169733, 0, 0.17, 0, -0.169733, 0, -0.00952227, -1.1855, 0.798991, -1.69662)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="hazelnut_syrup" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11524, 0, -1.70579)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hazelnut_syrup/StaticBody3D2" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0207283, 0.779497, -0.0476165)
+shape = SubResource("BoxShape3D_sf48d")
+
+[node name="mocha_syrup" type="Node3D" parent="." index="18"]
+
+[node name="syrup bottle4" parent="mocha_syrup" index="0" instance=ExtResource("8_nlulf")]
+transform = Transform3D(0.101522, 0, 0.136357, 0, 0.17, 0, -0.136357, 0, 0.101522, -1.7684, 0.789845, -1.65005)
+
+[node name="syrup bottle5" parent="mocha_syrup" index="1" instance=ExtResource("8_nlulf")]
+transform = Transform3D(-0.0337152, 0, 0.166623, 0, 0.17, 0, -0.166623, 0, -0.0337152, -1.9069, 0.789845, -1.68428)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mocha_syrup" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83537, 0, -1.68243)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mocha_syrup/StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00585878, 0.779497, -0.0688593)
+shape = SubResource("BoxShape3D_sf48d")

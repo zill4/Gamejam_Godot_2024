@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf6nre1k14cbv"]
+
+[ext_resource type="PackedScene" uid="uid://dq8urien5cwgo" path="res://assets/blender/portal_goop.glb" id="1_h2rhq"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ywkj"]
+radius = 1.11932
+height = 3.13554
+
+[node name="portal_goop" instance=ExtResource("1_h2rhq")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114561, 1.02287, 0)
+shape = SubResource("CapsuleShape3D_4ywkj")
+disabled = true

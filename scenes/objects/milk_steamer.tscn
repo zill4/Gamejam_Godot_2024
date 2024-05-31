@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cme6bdgmc4bdu"]
+
+[ext_resource type="PackedScene" uid="uid://bjwbwg2lqh2un" path="res://assets/blender/milk_steamer.glb" id="1_43hxc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2u56x"]
+size = Vector3(0.301155, 1.01096, 0.462265)
+
+[node name="milk_steamer" instance=ExtResource("1_43hxc")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00560045, -0.0608313, 0.212202)
+shape = SubResource("BoxShape3D_2u56x")
