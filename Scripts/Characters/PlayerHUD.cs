@@ -4,14 +4,14 @@ using System;
 public partial class PlayerHUD : Control
 {
 
-	private Label MessageLabel;
-	private Timer RoundTimer;
-	private Label WaveLabel;
-	private Label TimerLabel;
+    private Label MessageLabel;
+    private Timer RoundTimer;
+    private Label WaveLabel;
+    private Label TimerLabel;
     private Label CountdownLabel;
 
 
-	// Called when the node enters the scene tree for the first time.
+    // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
         MessageLabel = GetNode<Label>("Message");
@@ -39,18 +39,20 @@ public partial class PlayerHUD : Control
 
     public void UpdateCountdownLabel(float timeLeft)
     {
-        CountdownLabel.Text =  $"Next Round: {timeLeft:F2}";;
+        CountdownLabel.Text = $"Next Round: {timeLeft:F2}"; ;
     }
 
-    public void ToggleCountdownLabel()
+    public void ShowCountdownLabel()
     {
-        if (CountdownLabel.Visible)
-        {
-            CountdownLabel.Hide();
-        }
-        else
-        {
-            CountdownLabel.Show();
-        }
+
+        CountdownLabel.Show();
+
     }
+
+    public void HideCountdownLabel()
+    {
+        CountdownLabel.Hide();
+
+    }
+
 }

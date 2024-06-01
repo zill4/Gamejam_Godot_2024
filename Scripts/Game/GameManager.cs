@@ -104,6 +104,11 @@ public partial class GameManager : Node
 		{
 			_playerHUD.UpdateTimerLabel((float)_roundTimer.TimeLeft);
 		}
+
+		if (_countdownTimer.TimeLeft > 0)
+		{
+			_playerHUD.UpdateCountdownLabel((float)_countdownTimer.TimeLeft);
+		}
 	}
 
 	private void SpawnWave()
@@ -129,6 +134,7 @@ public partial class GameManager : Node
         _spawnTimer.Stop();
         RemoveAllNPCs();
         _countdownTimer.Start();
+		_playerHUD.ShowCountdownLabel();
     }
 
     private void OnCountdownTimerTimeout()
@@ -136,6 +142,8 @@ public partial class GameManager : Node
         GD.Print("Starting next round");
         CurrentWave++;
 		_playerHUD.UpdateWaveLabel(CurrentWave);
+		_playerHUD.HideCountdownLabel();
+		_countdownTimer.Stop();
         StartRound();
     }
 
