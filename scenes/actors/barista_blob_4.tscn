@@ -1,59 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://6jswjgo5jmj2"]
 
 [ext_resource type="Animation" uid="uid://b7ssfk3mu3ivt" path="res://assets/animation rework/idle_rework.res" id="1_24cqq"]
+[ext_resource type="Script" path="res://scripts/Characters/Player.cs" id="1_gnjwn"]
 [ext_resource type="Animation" uid="uid://cw76mskg2bd5y" path="res://assets/animation rework/jump_rework.res" id="2_v53rg"]
 [ext_resource type="Animation" uid="uid://camg181by416w" path="res://assets/animation rework/waddle_rework.res" id="3_csbp7"]
-
-[sub_resource type="GDScript" id="GDScript_1dqb5"]
-resource_name = "playerMovement"
-script/source = "extends CharacterBody3D
-
-@onready var animation_player = $AnimationPlayer
-@onready var jump_timer = $AnimationPlayer/jumpTimer
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting(\"physics/3d/default_gravity\")
-
-
-func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-
-	# Handle jump & animation
-	if Input.is_action_just_pressed(\"jump\") and is_on_floor():
-		
-		animation_player.play(\"jump\")
-		print(\"im jumping\")
-
-		jump_timer.start()
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector(\"left\", \"right\", \"forward\", \"back\")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
-
-	#rotate per input
-	
-	
-
-
-
-	move_and_slide()
-
-#jump movement
-func _on_jump_timer_timeout():
-	velocity.y = JUMP_VELOCITY
-"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avc12"]
 resource_name = "body"
@@ -127,7 +77,7 @@ radius = 1.001
 
 [node name="player" type="CharacterBody3D"]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-script = SubResource("GDScript_1dqb5")
+script = ExtResource("1_gnjwn")
 
 [node name="Armature" type="Node3D" parent="."]
 
@@ -138,7 +88,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.976073, 0.217442, 1.3934e-07, -0.217442, 0.976073, -2.07623e-07, -1.81152e-07, 1.72357e-07, 1, 0.128009, 1.85814, -5.16254e-15)
 bones/0/enabled = true
 bones/0/position = Vector3(0.128009, 1.85814, -5.16254e-15)
-bones/0/rotation = Quaternion(9.55684e-08, 8.06066e-08, -0.109377, 0.994)
+bones/0/rotation = Quaternion(-0.0148039, -0.00162892, -0.109365, 0.99389)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "base"
 bones/1/parent = -1
@@ -152,8 +102,8 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.800341, 0.070874, -0.595341, -0.0568663, 0.997485, 0.0423006, 0.596842, 0, 0.802358, 1.86344e-10, 0.0565243, 1.38963e-10)
 bones/2/enabled = true
 bones/2/position = Vector3(1.86344e-10, 0.0565243, 1.38963e-10)
-bones/2/rotation = Quaternion(-0.0111469, -0.31416, -0.0336617, 0.948708)
-bones/2/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.0146604, -0.314016, -0.0442717, 0.948272)
+bones/2/scale = Vector3(1, 1, 0.999999)
 
 [node name="hat" type="MeshInstance3D" parent="Armature/Skeleton3D"]
 mesh = SubResource("ArrayMesh_kskcf")
@@ -163,6 +113,7 @@ skin = SubResource("Skin_13qlm")
 libraries = {
 "": SubResource("AnimationLibrary_be5ma")
 }
+autoplay = "idle"
 
 [node name="jumpTimer" type="Timer" parent="AnimationPlayer"]
 wait_time = 0.211

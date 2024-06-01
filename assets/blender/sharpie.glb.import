@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ccqvj6kpxgupl"
-path="res://.godot/imported/sharpie.glb-6a78d3c9e7a3bffe1ccb55e9804074be.scn"
+path="res://.godot/imported/sharpie.glb-d5220a5757679f5c7d4908232214c3b8.scn"
 
 [deps]
 
-source_file="res://Assets/blender/sharpie.glb"
-dest_files=["res://.godot/imported/sharpie.glb-6a78d3c9e7a3bffe1ccb55e9804074be.scn"]
+source_file="res://assets/blender/sharpie.glb"
+dest_files=["res://.godot/imported/sharpie.glb-d5220a5757679f5c7d4908232214c3b8.scn"]
 
 [params]
 

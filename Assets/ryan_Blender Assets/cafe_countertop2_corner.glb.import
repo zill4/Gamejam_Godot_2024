@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bb8370qccd3yf"
-path="res://.godot/imported/cafe_countertop2_corner.glb-6a263c158542e45ea8bdca4b88d59ca6.scn"
+path="res://.godot/imported/cafe_countertop2_corner.glb-7b3acd7408ef0580f908940cae78a680.scn"
 
 [deps]
 
-source_file="res://Assets/ryan_Blender Assets/cafe_countertop2_corner.glb"
-dest_files=["res://.godot/imported/cafe_countertop2_corner.glb-6a263c158542e45ea8bdca4b88d59ca6.scn"]
+source_file="res://assets/ryan_Blender Assets/cafe_countertop2_corner.glb"
+dest_files=["res://.godot/imported/cafe_countertop2_corner.glb-7b3acd7408ef0580f908940cae78a680.scn"]
 
 [params]
 

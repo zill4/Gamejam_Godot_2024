@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bbsf5v30o2brm"
-path="res://.godot/imported/portal_goop.glb-2f241e0e3e50392789a402d1d1657a42.scn"
+path="res://.godot/imported/portal_goop.glb-e14961cc965484082c414581ad5cec9b.scn"
 
 [deps]
 
-source_file="res://Assets/ryan_Blender Assets/portal_goop.glb"
-dest_files=["res://.godot/imported/portal_goop.glb-2f241e0e3e50392789a402d1d1657a42.scn"]
+source_file="res://assets/ryan_Blender Assets/portal_goop.glb"
+dest_files=["res://.godot/imported/portal_goop.glb-e14961cc965484082c414581ad5cec9b.scn"]
 
 [params]
 
