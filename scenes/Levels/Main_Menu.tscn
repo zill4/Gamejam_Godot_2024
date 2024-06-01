@@ -1,0 +1,212 @@
+[gd_scene load_steps=6 format=3 uid="uid://r8yd7gu1unmk"]
+
+[ext_resource type="Script" path="res://scripts/Main_Menu.gd" id="1_fky5h"]
+[ext_resource type="Texture2D" uid="uid://ba12p8axfax8f" path="res://assets/sprites/rat cafe menu.png" id="1_fphbd"]
+[ext_resource type="Texture2D" uid="uid://bauqeuhalrrbf" path="res://assets/sprites/back arrow.png" id="3_5mkf4"]
+[ext_resource type="AudioStream" uid="uid://djoui17ffd1f7" path="res://assets/audio/rat cafe_this is a normal cafe2.mp3" id="4_bwtxp"]
+[ext_resource type="AudioStream" uid="uid://x413ligkgxh6" path="res://assets/audio/Adobe sound_tic.wav" id="5_g6iov"]
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_fky5h")
+
+[node name="bg" type="Sprite2D" parent="."]
+position = Vector2(959.5, 538.5)
+scale = Vector2(0.998959, 1.0074)
+texture = ExtResource("1_fphbd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(956, 540)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -342.0
+offset_right = 150.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 33
+
+[node name="Start_Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[node name="Settings_Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Settings"
+
+[node name="Quit_Button" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[node name="main_menu_settings" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -203.0
+offset_top = -372.0
+offset_right = 199.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="master_slider" type="HSlider" parent="main_menu_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -73.0
+offset_right = 148.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Master Volume"
+min_value = -150.0
+max_value = 0.0
+value = -6.0
+
+[node name="text_master volume" type="Label" parent="main_menu_settings/master_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 15.5
+offset_right = 59.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="sfx_slider" type="HSlider" parent="main_menu_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -9.0
+offset_right = 148.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Master Volume"
+value = 90.0
+
+[node name="text_sfx volume" type="Label" parent="main_menu_settings/sfx_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 15.5
+offset_right = 59.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Effects Volume"
+horizontal_alignment = 1
+
+[node name="music_slider" type="HSlider" parent="main_menu_settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 55.0
+offset_right = 148.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Master Volume"
+value = 90.0
+
+[node name="text_music volume" type="Label" parent="main_menu_settings/music_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 15.5
+offset_right = 59.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="text_audio settings" type="Label" parent="main_menu_settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = 15.0
+offset_right = 105.0
+offset_bottom = 59.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="backButton" type="Button" parent="main_menu_settings"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 41.0
+offset_bottom = 40.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("3_5mkf4")
+expand_icon = true
+
+[node name="mainMenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_bwtxp")
+autoplay = true
+bus = &"music"
+
+[node name="tick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_g6iov")
+pitch_scale = 2.0
+bus = &"sfx"
+
+[connection signal="pressed" from="VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="main_menu_settings/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="pressed" from="main_menu_settings/backButton" to="." method="_on_back_button_pressed"]

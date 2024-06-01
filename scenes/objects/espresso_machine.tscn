@@ -22,4 +22,5 @@ texture = ExtResource("2_vw8se")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
 stream = ExtResource("3_flcxl")
+max_distance = 2.0
 bus = &"sfx"

@@ -44,6 +44,8 @@ wait_time = 0.221
 [node name="rat_idle" type="AudioStreamPlayer3D" parent="." index="3"]
 stream = ExtResource("3_u46e7")
 autoplay = true
+max_distance = 50.0
+max_polyphony = 2
 bus = &"sfx"
 
 [node name="rat_takes_damage" type="AudioStreamPlayer3D" parent="." index="4"]
@@ -52,6 +54,7 @@ bus = &"sfx"
 
 [node name="rat_death" type="AudioStreamPlayer3D" parent="." index="5"]
 stream = ExtResource("5_gj624")
+max_distance = 50.0
 bus = &"sfx"
 
 [connection signal="timeout" from="rat_death_timer" to="." method="_on_timer_timeout"]

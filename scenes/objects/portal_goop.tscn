@@ -22,9 +22,11 @@ disabled = true
 stream = ExtResource("2_n6wuw")
 volume_db = -2.835
 autoplay = true
+max_distance = 3.0
 bus = &"sfx"
 
 [node name="portal_change size" type="AudioStreamPlayer3D" parent="." index="6"]
 stream = ExtResource("3_7tdtg")
 volume_db = -3.646
+max_distance = 2.0
 bus = &"sfx"

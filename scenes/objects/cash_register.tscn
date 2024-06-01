@@ -74,4 +74,5 @@ text = "test"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
 stream = ExtResource("2_wmtuk")
+max_distance = 5.0
 bus = &"sfx"
