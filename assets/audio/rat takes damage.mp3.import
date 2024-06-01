@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7tm5mgi8qckv"
+path="res://.godot/imported/rat takes damage.mp3-0d6d365ea48ecd55eea945c59df96276.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/rat takes damage.mp3"
+dest_files=["res://.godot/imported/rat takes damage.mp3-0d6d365ea48ecd55eea945c59df96276.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

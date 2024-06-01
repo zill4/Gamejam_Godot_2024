@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvk846wrh14sv"
-path.s3tc="res://.godot/imported/espresso.png-9df9f040e2993f288cc84368ea35fabc.s3tc.ctex"
+uid="uid://bmn52ymdcudh7"
+path.s3tc="res://.godot/imported/mocha.png-1d119eca89b7574beb42c425df29f91f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/sprites/espresso.png"
-dest_files=["res://.godot/imported/espresso.png-9df9f040e2993f288cc84368ea35fabc.s3tc.ctex"]
+source_file="res://assets/sprites/order icons/mocha.png"
+dest_files=["res://.godot/imported/mocha.png-1d119eca89b7574beb42c425df29f91f.s3tc.ctex"]
 
 [params]
 
