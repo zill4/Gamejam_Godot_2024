@@ -1,32 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://bf6nre1k14cbv"]
+[gd_scene load_steps=6 format=3 uid="uid://bf6nre1k14cbv"]
 
 [ext_resource type="PackedScene" uid="uid://dq8urien5cwgo" path="res://assets/blender/portal_goop.glb" id="1_h2rhq"]
 [ext_resource type="AudioStream" uid="uid://c31snocwx2wk0" path="res://assets/audio/_ portal_ambient.mp3" id="2_n6wuw"]
+[ext_resource type="Script" path="res://scenes/objects/portal_goop.gd" id="2_ulxa1"]
 [ext_resource type="AudioStream" uid="uid://df8spjaid02mx" path="res://assets/audio/_ portal_change size.mp3" id="3_7tdtg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ywkj"]
 radius = 1.11932
 height = 3.13554
 
-[node name="portal_goop" instance=ExtResource("1_h2rhq")]
+[node name="portal" groups=["Portal"] instance=ExtResource("1_h2rhq")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+script = ExtResource("2_ulxa1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+[node name="portal top" parent="." index="1"]
+transform = Transform3D(-0.993398, 0, 0.114722, 0, 1, 0, -0.114722, 0, -0.993398, -0.305917, 3.04481, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114561, 1.02287, 0)
-shape = SubResource("CapsuleShape3D_4ywkj")
-disabled = true
-
-[node name="ambient" type="AudioStreamPlayer3D" parent="." index="5"]
+[node name="ambient" type="AudioStreamPlayer3D" parent="." index="4"]
 stream = ExtResource("2_n6wuw")
 volume_db = -2.835
 autoplay = true
 max_distance = 3.0
 bus = &"sfx"
 
-[node name="portal_change size" type="AudioStreamPlayer3D" parent="." index="6"]
+[node name="portal_change size" type="AudioStreamPlayer3D" parent="." index="5"]
 stream = ExtResource("3_7tdtg")
 volume_db = -3.646
 max_distance = 2.0
 bus = &"sfx"
+
+[node name="Area3D" type="Area3D" parent="." index="6" groups=["Portal"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" groups=["Portal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114561, 1.02287, 0)
+shape = SubResource("CapsuleShape3D_4ywkj")
+disabled = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

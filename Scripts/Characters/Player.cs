@@ -9,6 +9,9 @@ public partial class Player : CharacterBody3D
 	public const float JumpVelocity = 4.5f;
 
 	private AnimationPlayer _animationPlayer;
+	private AnimationPlayer _animationPlayer2;
+	
+	
 	private Node3D _twistPivotNode;
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -17,6 +20,7 @@ public partial class Player : CharacterBody3D
 	{
 		// Animations
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer2");
 		_animationPlayer.Play("idle");
 
 		_twistPivotNode = GetNode<Node3D>("TwistPivot");
@@ -80,4 +84,17 @@ public partial class Player : CharacterBody3D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+	
+	private void _on_interaction_trigger_body_entered(Node3D body)
+		{
+			if (body.GetNode<Node3d> == "portal") {
+				print("plese work");
+			}
+		}	
+	
 }
+
+
+
+
+

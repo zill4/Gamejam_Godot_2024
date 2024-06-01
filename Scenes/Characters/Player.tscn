@@ -115,7 +115,7 @@ _data = {
 }
 
 [node name="player2" type="CharacterBody3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 script = ExtResource("1_o84cx")
 
 [node name="Armature" type="Node3D" parent="."]
@@ -342,14 +342,16 @@ pitch_scale = 2.0
 bus = &"sfx"
 
 [node name="sharpie2" parent="." instance=ExtResource("11_1dwc3")]
-transform = Transform3D(8.51012, -3.21052, -4.15576, -3.45014, 2.5479, -9.03354, 3.95908, 9.12144, 1.06062, 1.36442, 1.1759, -0.455199)
+transform = Transform3D(2.55304, -0.963157, -1.24673, -1.03504, 0.76437, -2.71006, 1.18772, 2.73643, 0.318186, 1.36442, 1.1759, -0.455199)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="sharpie2"]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+root_node = NodePath("../sharpie2")
 libraries = {
 "": SubResource("AnimationLibrary_q2c6m")
 }
 
 [connection signal="timeout" from="AnimationPlayer/jumpTimer" to="." method="_on_jump_timer_timeout"]
+[connection signal="body_entered" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_entered"]
 [connection signal="value_changed" from="Control/settings/master_slider" to="Control" method="_on_master_slider_value_changed"]
 [connection signal="value_changed" from="Control/settings/sfx_slider" to="Control" method="_on_sfx_slider_value_changed"]
 [connection signal="value_changed" from="Control/settings/music_slider" to="Control" method="_on_music_slider_value_changed"]
