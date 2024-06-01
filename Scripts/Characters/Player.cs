@@ -91,12 +91,12 @@ public partial class Player : CharacterBody3D
 	    // Change these methods to public to allow access from Interactable
     public void _on_Area3D_body_entered(Node body)
     {
-		GD.Print("Not crazy entered area. :3");
-        if (body is Interactable interactable)
+		// GD.Print("Not crazy entered area. :3");
+        if (body is Area3D interactable)
         {
 			 GD.Print("enter area.");
             _canInteract = true;
-            _currentInteractable = interactable;
+            // _currentInteractable = interactable;
         }
     }
 
