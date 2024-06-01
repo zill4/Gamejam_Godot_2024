@@ -23,7 +23,7 @@ func _play_UI_tick():
 func _on_start_button_pressed():
 	
 	_play_UI_tick()
-	get_tree().change_scene_to_file("res://scenes/Levels/Demo_Level.tscn")
+	get_tree().change_scene_to_file("res://scenes/_master_game.tscn")
 
 func _on_settings_button_pressed():
 	
@@ -48,3 +48,11 @@ func _on_quit_button_pressed():
 func _on_master_slider_value_changed(value):
 	_play_UI_tick()
 	AudioServer.set_bus_volume_db (0, 0 + (value/log(10)))
+
+func _on_music_slider_value_changed(value):
+	_play_UI_tick()
+	AudioServer.set_bus_volume_db (2, 0 + (value/log(10)))
+
+func _on_sfx_slider_value_changed(value):
+	_play_UI_tick()
+	AudioServer.set_bus_volume_db (1, 0 + (value/log(10)))

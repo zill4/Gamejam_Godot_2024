@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ocwvwwt1i6f0"]
+[gd_scene load_steps=17 format=3 uid="uid://ocwvwwt1i6f0"]
 
 [ext_resource type="Animation" uid="uid://b7ssfk3mu3ivt" path="res://assets/animation rework/idle_rework.res" id="1_grfh1"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player.cs" id="1_o84cx"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="5_5hwnq"]
 [ext_resource type="AudioStream" uid="uid://c2yg1c1huarni" path="res://assets/audio/player_attack.mp3" id="6_ctn61"]
 [ext_resource type="AudioStream" uid="uid://c06yn50jgaebg" path="res://assets/audio/bounce.mp3" id="7_calyt"]
+[ext_resource type="Texture2D" uid="uid://bauqeuhalrrbf" path="res://assets/sprites/back arrow.png" id="8_j17vw"]
+[ext_resource type="Script" path="res://scenes/UI/settings.gd" id="8_mll50"]
+[ext_resource type="AudioStream" uid="uid://x413ligkgxh6" path="res://assets/audio/Adobe sound_tic.wav" id="10_7dkoh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avc12"]
 resource_name = "body"
@@ -149,5 +152,159 @@ bus = &"sfx"
 
 [node name="AudioListener3D" type="AudioListener3D" parent="."]
 current = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_mll50")
+
+[node name="settings" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -201.0
+offset_top = -192.0
+offset_right = 201.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="master_slider" type="HSlider" parent="Control/settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -73.0
+offset_right = 148.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Master Volume"
+min_value = -150.0
+max_value = 0.0
+value = -6.0
+
+[node name="text_master volume" type="Label" parent="Control/settings/master_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 15.5
+offset_right = 59.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Master Volume"
+horizontal_alignment = 1
+
+[node name="sfx_slider" type="HSlider" parent="Control/settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = -9.0
+offset_right = 148.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Master Volume"
+min_value = -150.0
+max_value = 0.0
+value = -6.0
+
+[node name="text_sfx volume" type="Label" parent="Control/settings/sfx_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 15.5
+offset_right = 59.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Effects Volume"
+horizontal_alignment = 1
+
+[node name="music_slider" type="HSlider" parent="Control/settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -147.0
+offset_top = 55.0
+offset_right = 148.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "Master Volume"
+min_value = -150.0
+max_value = 0.0
+value = -6.0
+
+[node name="text_music volume" type="Label" parent="Control/settings/music_slider"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 15.5
+offset_right = 59.0
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Music Volume"
+horizontal_alignment = 1
+
+[node name="text_audio settings" type="Label" parent="Control/settings"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -106.0
+offset_top = 57.0
+offset_right = 103.0
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 30
+text = "Audio Settings"
+horizontal_alignment = 1
+
+[node name="backButton" type="Button" parent="Control/settings"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 41.0
+offset_bottom = 40.0
+theme_type_variation = &"FlatButton"
+icon = ExtResource("8_j17vw")
+expand_icon = true
+
+[node name="tick" type="AudioStreamPlayer" parent="Control/settings"]
+stream = ExtResource("10_7dkoh")
+pitch_scale = 2.0
+bus = &"sfx"
 
 [connection signal="timeout" from="AnimationPlayer/jumpTimer" to="." method="_on_jump_timer_timeout"]

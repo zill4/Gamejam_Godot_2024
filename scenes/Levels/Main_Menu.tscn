@@ -121,7 +121,9 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Master Volume"
-value = 90.0
+min_value = -150.0
+max_value = 0.0
+value = -6.0
 
 [node name="text_sfx volume" type="Label" parent="main_menu_settings/sfx_slider"]
 layout_mode = 1
@@ -153,9 +155,12 @@ offset_bottom = 84.0
 grow_horizontal = 2
 grow_vertical = 2
 tooltip_text = "Master Volume"
-value = 90.0
+min_value = -150.0
+max_value = 0.0
+value = -6.0
 
 [node name="text_music volume" type="Label" parent="main_menu_settings/music_slider"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -209,4 +214,6 @@ bus = &"sfx"
 [connection signal="pressed" from="VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]
 [connection signal="value_changed" from="main_menu_settings/master_slider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="main_menu_settings/sfx_slider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="value_changed" from="main_menu_settings/music_slider" to="." method="_on_music_slider_value_changed"]
 [connection signal="pressed" from="main_menu_settings/backButton" to="." method="_on_back_button_pressed"]
