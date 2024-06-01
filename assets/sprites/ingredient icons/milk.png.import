@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bev5j3t86h8w0"
-path.s3tc="res://.godot/imported/hazelnut.png-c15542d22e308060a19b43c9a60855cc.s3tc.ctex"
+uid="uid://qf04jr1daayr"
+path.s3tc="res://.godot/imported/milk.png-48e3f5ec72aba793fadba0c55ddb39fc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/hazelnut.png"
-dest_files=["res://.godot/imported/hazelnut.png-c15542d22e308060a19b43c9a60855cc.s3tc.ctex"]
+source_file="res://assets/sprites/ingredient icons/milk.png"
+dest_files=["res://.godot/imported/milk.png-48e3f5ec72aba793fadba0c55ddb39fc.s3tc.ctex"]
 
 [params]
 

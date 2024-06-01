@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxes23fhwr7fj"]
 
-[ext_resource type="Texture2D" uid="uid://dvk846wrh14sv" path="res://assets/sprites/espresso.png" id="1_8fhsd"]
-[ext_resource type="Texture2D" uid="uid://bekmgmcx1b6u8" path="res://assets/sprites/cafe_au_lait.png" id="2_8n1i7"]
-[ext_resource type="Texture2D" uid="uid://011aouy2cpr" path="res://assets/sprites/latte.png" id="3_ytct8"]
-[ext_resource type="Texture2D" uid="uid://bev5j3t86h8w0" path="res://assets/sprites/hazelnut.png" id="4_vld77"]
-[ext_resource type="Texture2D" uid="uid://bmn52ymdcudh7" path="res://assets/sprites/mocha.png" id="5_5dhkf"]
+[ext_resource type="Texture2D" uid="uid://dvk846wrh14sv" path="res://assets/sprites/order icons/espresso.png" id="1_8fhsd"]
+[ext_resource type="Texture2D" uid="uid://bekmgmcx1b6u8" path="res://assets/sprites/order icons/cafe_au_lait.png" id="2_8n1i7"]
+[ext_resource type="Texture2D" uid="uid://011aouy2cpr" path="res://assets/sprites/order icons/latte.png" id="3_ytct8"]
+[ext_resource type="Texture2D" uid="uid://bev5j3t86h8w0" path="res://assets/sprites/order icons/hazelnut.png" id="4_vld77"]
+[ext_resource type="Texture2D" uid="uid://bmn52ymdcudh7" path="res://assets/sprites/order icons/mocha.png" id="5_5dhkf"]
 
 [node name="OrderIcons" type="Control"]
 layout_mode = 3
