@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://d051xfh5efspu"
-path="res://.godot/imported/rat idle.mp3-5f9b1e20405a32ca704d443bcb035934.mp3str"
+path="res://.godot/imported/rat idle.mp3-7272c91b9585f81150b9c796880eb575.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/rat idle.mp3"
-dest_files=["res://.godot/imported/rat idle.mp3-5f9b1e20405a32ca704d443bcb035934.mp3str"]
+source_file="res://Assets/audio/rat idle.mp3"
+dest_files=["res://.godot/imported/rat idle.mp3-7272c91b9585f81150b9c796880eb575.mp3str"]
 
 [params]
 

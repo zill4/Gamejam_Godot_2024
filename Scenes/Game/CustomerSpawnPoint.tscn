@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dxm311sq6yljs"]
+
+[node name="CustomerSpawnPoint" type="Node3D"]

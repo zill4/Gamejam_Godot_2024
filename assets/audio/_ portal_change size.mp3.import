@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://df8spjaid02mx"
-path="res://.godot/imported/_ portal_change size.mp3-6e5cda84263a7dc4985785159650d8e6.mp3str"
+path="res://.godot/imported/_ portal_change size.mp3-69fd7b9124de4d3c4903ee247997abb4.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/_ portal_change size.mp3"
-dest_files=["res://.godot/imported/_ portal_change size.mp3-6e5cda84263a7dc4985785159650d8e6.mp3str"]
+source_file="res://Assets/audio/_ portal_change size.mp3"
+dest_files=["res://.godot/imported/_ portal_change size.mp3-69fd7b9124de4d3c4903ee247997abb4.mp3str"]
 
 [params]
 

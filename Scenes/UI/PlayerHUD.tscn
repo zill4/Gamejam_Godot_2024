@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cg7mwkkcoc0f2"]
+[gd_scene load_steps=7 format=3 uid="uid://cg7mwkkcoc0f2"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/PlayerHUD.cs" id="1_205xu"]
 
@@ -6,6 +6,15 @@
 font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_efdxu"]
+font_size = 69
+
+[sub_resource type="LabelSettings" id="LabelSettings_p3wct"]
+font_size = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_v1ur6"]
+font_size = 69
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hqqe"]
 font_size = 69
 
 [node name="PlayerHud" type="Control"]
@@ -24,8 +33,6 @@ offset_bottom = 101.0
 text = "Wave: 0"
 label_settings = SubResource("LabelSettings_2aiw7")
 
-[node name="RoundTimer" type="Timer" parent="."]
-
 [node name="Message" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
@@ -36,3 +43,44 @@ offset_bottom = 95.0
 grow_horizontal = 0
 text = "Howdy Meow"
 label_settings = SubResource("LabelSettings_efdxu")
+
+[node name="Timer" type="Label" parent="."]
+layout_mode = 0
+offset_top = 92.0
+offset_right = 254.0
+offset_bottom = 200.0
+text = "TIME: "
+label_settings = SubResource("LabelSettings_p3wct")
+
+[node name="RoundTimer" type="Timer" parent="."]
+
+[node name="Countdown" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -10.5
+offset_right = 21.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Next Round: "
+label_settings = SubResource("LabelSettings_v1ur6")
+
+[node name="Prompt" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -267.0
+offset_right = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PROMPT"
+label_settings = SubResource("LabelSettings_8hqqe")

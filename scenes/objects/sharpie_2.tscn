@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0231snud8pck"]
 
-[ext_resource type="PackedScene" uid="uid://ccqvj6kpxgupl" path="res://assets/blender/sharpie.glb" id="1_yen2k"]
+[ext_resource type="PackedScene" uid="uid://ccqvj6kpxgupl" path="res://Assets/blender/sharpie.glb" id="1_yen2k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5j1pv"]
 radius = 0.0113136

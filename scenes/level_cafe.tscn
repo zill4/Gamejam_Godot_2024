@@ -1,15 +1,15 @@
 [gd_scene load_steps=16 format=3 uid="uid://b6b0q3nmtmsa6"]
 
-[ext_resource type="PackedScene" uid="uid://dphrlmlnvlgbc" path="res://assets/blender/cafe_room2_withback.glb" id="1_26a22"]
-[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://scenes/objects/cafe_countertop.tscn" id="2_bdrc5"]
-[ext_resource type="PackedScene" uid="uid://d4ahykxi7fph8" path="res://scenes/objects/barrel.tscn" id="3_nu4yq"]
-[ext_resource type="PackedScene" uid="uid://bf6nre1k14cbv" path="res://scenes/objects/portal_goop.tscn" id="4_bci18"]
-[ext_resource type="PackedScene" uid="uid://ctq12jqphoo88" path="res://scenes/objects/espresso_machine.tscn" id="6_gjgns"]
-[ext_resource type="PackedScene" uid="uid://dbn5mey3y176h" path="res://scenes/objects/syrup_bottle_hazel.tscn" id="7_qp5mn"]
-[ext_resource type="PackedScene" uid="uid://c3h10mrfl4yi0" path="res://scenes/objects/cash_register.tscn" id="7_s018i"]
-[ext_resource type="PackedScene" uid="uid://bmrn0xjqyaej4" path="res://scenes/objects/syrup_bottle_mocha.tscn" id="8_nlulf"]
-[ext_resource type="PackedScene" uid="uid://cme6bdgmc4bdu" path="res://scenes/objects/milk_steamer.tscn" id="9_7loks"]
-[ext_resource type="PackedScene" uid="uid://bkteqvacwa8tn" path="res://scenes/objects/coffee_cup.tscn" id="10_lnrk7"]
+[ext_resource type="PackedScene" uid="uid://dphrlmlnvlgbc" path="res://Assets/blender/cafe_room2_withback.glb" id="1_26a22"]
+[ext_resource type="PackedScene" uid="uid://rkjugw8lm4ai" path="res://Scenes/objects/cafe_countertop.tscn" id="2_bdrc5"]
+[ext_resource type="PackedScene" uid="uid://d4ahykxi7fph8" path="res://Scenes/objects/barrel.tscn" id="3_nu4yq"]
+[ext_resource type="PackedScene" uid="uid://bf6nre1k14cbv" path="res://Scenes/objects/portal_goop.tscn" id="4_bci18"]
+[ext_resource type="PackedScene" uid="uid://ctq12jqphoo88" path="res://Scenes/objects/espresso_machine.tscn" id="6_gjgns"]
+[ext_resource type="PackedScene" uid="uid://dbn5mey3y176h" path="res://Scenes/objects/syrup_bottle_hazel.tscn" id="7_qp5mn"]
+[ext_resource type="PackedScene" uid="uid://c3h10mrfl4yi0" path="res://Scenes/objects/cash_register.tscn" id="7_s018i"]
+[ext_resource type="PackedScene" uid="uid://bmrn0xjqyaej4" path="res://Scenes/objects/syrup_bottle_mocha.tscn" id="8_nlulf"]
+[ext_resource type="PackedScene" uid="uid://cme6bdgmc4bdu" path="res://Scenes/objects/milk_steamer.tscn" id="9_7loks"]
+[ext_resource type="PackedScene" uid="uid://bkteqvacwa8tn" path="res://Scenes/objects/coffee_cup.tscn" id="10_lnrk7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6r1uv"]
 resource_name = "rug2"
@@ -175,6 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.34203, 0.557683, -3.1876)
 transform = Transform3D(0.81, 0, 0, 0, 0.81, 0, 0, 0, 0.81, 0.825392, 0.56878, -6.96194)
 
 [node name="table" type="Node3D" parent="barrels" index="14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0684e-07, 0, 2.36598)
 
 [node name="barrel12" parent="barrels/table" index="0" instance=ExtResource("3_nu4yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99667, -0.0116699, 1.57145)
@@ -183,6 +184,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.99667, -0.0116699, 1.57145
 transform = Transform3D(2.37, 0, 0, 0, 0.08, 0, 0, 0, 2.3, -3.99667, 0.532859, 1.47674)
 
 [node name="table2" type="Node3D" parent="barrels" index="15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.30561e-07, 0, 2.63731)
 
 [node name="barrel12" parent="barrels/table2" index="0" instance=ExtResource("3_nu4yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21633, -0.0116699, 1.57145)
@@ -191,6 +193,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.21633, -0.0116699, 1.57145
 transform = Transform3D(2.37, 0, 0, 0, 0.08, 0, 0, 0, 2.3, -1.21633, 0.532859, 1.47674)
 
 [node name="table3" type="Node3D" parent="barrels" index="16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.60696e-07, 0, 2.98201)
 
 [node name="barrel12" parent="barrels/table3" index="0" instance=ExtResource("3_nu4yq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.56309, -0.0116699, 1.52575)

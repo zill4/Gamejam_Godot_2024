@@ -36,6 +36,7 @@ transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, -0.211939, 0.112254,
 [node name="Camera3D" type="Camera3D" parent="player"]
 transform = Transform3D(2.38095, 0, 0, 0, 2.10056, 1.12098, 0, -1.12098, 2.10056, 0.229413, 5.91403, 5.2524)
 attributes = SubResource("CameraAttributesPractical_y56xf")
+current = true
 fov = 37.8493
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]

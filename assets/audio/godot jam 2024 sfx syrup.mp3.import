@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://dbyjjuuju6n27"
-path="res://.godot/imported/godot jam 2024 sfx syrup.mp3-b99efc945f717a48020c01c50337ab84.mp3str"
+path="res://.godot/imported/godot jam 2024 sfx syrup.mp3-0fd77d80cb00bfc95d7c8a69782658e3.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/godot jam 2024 sfx syrup.mp3"
-dest_files=["res://.godot/imported/godot jam 2024 sfx syrup.mp3-b99efc945f717a48020c01c50337ab84.mp3str"]
+source_file="res://Assets/audio/godot jam 2024 sfx syrup.mp3"
+dest_files=["res://.godot/imported/godot jam 2024 sfx syrup.mp3-0fd77d80cb00bfc95d7c8a69782658e3.mp3str"]
 
 [params]
 
