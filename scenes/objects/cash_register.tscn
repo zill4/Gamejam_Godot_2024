@@ -1,9 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3h10mrfl4yi0"]
+[gd_scene load_steps=5 format=3 uid="uid://c3h10mrfl4yi0"]
 
 [ext_resource type="PackedScene" uid="uid://drnw708tuxu0r" path="res://assets/blender/cash register.glb" id="1_qx2wq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o32vk"]
 size = Vector3(1.10217, 2.25381, 1.44066)
+
+[sub_resource type="Animation" id="Animation_1dkmt"]
+resource_name = "text_animate_on"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("cash_text:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.96361, 3.01233),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("cash_text:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0245391, 0.609973, 1.73527, 3.0078),
+"transitions": PackedFloat32Array(1, 0.0769465, 5.65685, 1),
+"update": 0,
+"values": [Vector3(0, 0.69, 0), Vector3(0, 1.4506, 0), Vector3(0, 1.734, 0), Vector3(0, 0.69, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("cash_text:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.0280447, 0.588939, 1.99468, 2.99728),
+"transitions": PackedFloat32Array(1, 0.329877, 8.57418, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(2, 2, 2), Vector3(2, 2, 2), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dafgc"]
+_data = {
+"text_animate_on": SubResource("Animation_1dkmt")
+}
 
 [node name="cash register" instance=ExtResource("1_qx2wq")]
 transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 0, 0)
@@ -13,3 +59,14 @@ transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0162964, -0.22139, -0.4226)
 shape = SubResource("BoxShape3D_o32vk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_dafgc")
+}
+
+[node name="cash_text" type="Label3D" parent="." index="3"]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.797539, 0)
+modulate = Color(1, 1, 1, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "test"

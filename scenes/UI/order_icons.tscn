@@ -1,25 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://bikn24cj25ad5"]
+[gd_scene load_steps=6 format=3 uid="uid://dxes23fhwr7fj"]
 
-[ext_resource type="Texture2D" uid="uid://b6hfvaa8m6dhc" path="res://assets/sprites/coffee_plain.png" id="1_a7myr"]
-[ext_resource type="Texture2D" uid="uid://cke1fypjmpui4" path="res://assets/sprites/coffee_addMilk.png" id="2_nj0fk"]
-[ext_resource type="Texture2D" uid="uid://dsuwlp4oqnxxu" path="res://assets/sprites/latte_plain.png" id="3_6i0aa"]
-[ext_resource type="Texture2D" uid="uid://buxybremeoqkh" path="res://assets/sprites/latte_hazelnut.png" id="4_jcuup"]
-[ext_resource type="Texture2D" uid="uid://cumnp68oqdnv8" path="res://assets/sprites/latte_mocha.png" id="5_rxvcm"]
+[ext_resource type="Texture2D" uid="uid://dvk846wrh14sv" path="res://assets/sprites/espresso.png" id="1_8fhsd"]
+[ext_resource type="Texture2D" uid="uid://bekmgmcx1b6u8" path="res://assets/sprites/cafe_au_lait.png" id="2_8n1i7"]
+[ext_resource type="Texture2D" uid="uid://011aouy2cpr" path="res://assets/sprites/latte.png" id="3_ytct8"]
+[ext_resource type="Texture2D" uid="uid://bev5j3t86h8w0" path="res://assets/sprites/hazelnut.png" id="4_vld77"]
+[ext_resource type="Texture2D" uid="uid://bmn52ymdcudh7" path="res://assets/sprites/mocha.png" id="5_5dhkf"]
 
-[node name="OrderIcons" type="Sprite3D"]
+[node name="OrderIcons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="espresso" type="Sprite3D" parent="."]
 billboard = 1
+texture = ExtResource("1_8fhsd")
 
-[node name="coffee_plain" type="Sprite3D" parent="."]
-texture = ExtResource("1_a7myr")
+[node name="cafe_au_lait" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("2_8n1i7")
 
-[node name="coffee_addMilk" type="Sprite3D" parent="."]
-texture = ExtResource("2_nj0fk")
+[node name="latte" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("3_ytct8")
 
-[node name="latte_plain" type="Sprite3D" parent="."]
-texture = ExtResource("3_6i0aa")
+[node name="hazelnut" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("4_vld77")
 
-[node name="latte_hazelnut" type="Sprite3D" parent="."]
-texture = ExtResource("4_jcuup")
-
-[node name="latte_mocha" type="Sprite3D" parent="."]
-texture = ExtResource("5_rxvcm")
+[node name="mocha" type="Sprite3D" parent="."]
+billboard = 1
+texture = ExtResource("5_5dhkf")

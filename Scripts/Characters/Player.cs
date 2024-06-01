@@ -31,24 +31,24 @@ public partial class Player : CharacterBody3D
 		Input.MouseMode = Input.MouseModeEnum.Captured;
 	}
 
-    public override void _Input(InputEvent @event)
-    {
+	public override void _Input(InputEvent @event)
+	{
 		// assuming this is necessary for the override
-        base._Input(@event);
+		base._Input(@event);
 		
 		if (@event is InputEventMouseMotion mouseMotion)
 		{
 			// Horizontal rotation (yaw) on TwistPivotNode
-            RotateY(Mathf.DegToRad(-mouseMotion.Relative.X * Sensitivity));
+			RotateY(Mathf.DegToRad(-mouseMotion.Relative.X * Sensitivity));
 
 			// Vertical rotation (pitch) on PitchPivotNode
-            float newPitchRotation = _twistPivotNode.RotationDegrees.X - (mouseMotion.Relative.Y * Sensitivity);
-            newPitchRotation = Mathf.Clamp(newPitchRotation, -90, 90);
-            _twistPivotNode.RotationDegrees = new Vector3(newPitchRotation, _twistPivotNode.RotationDegrees.Y, _twistPivotNode.RotationDegrees.Z);
+			float newPitchRotation = _twistPivotNode.RotationDegrees.X - (mouseMotion.Relative.Y * Sensitivity);
+			newPitchRotation = Mathf.Clamp(newPitchRotation, -90, 90);
+			_twistPivotNode.RotationDegrees = new Vector3(newPitchRotation, _twistPivotNode.RotationDegrees.Y, _twistPivotNode.RotationDegrees.Z);
 		}
-    }
+	}
 
-    public override void _PhysicsProcess(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		Vector3 velocity = Velocity;
 

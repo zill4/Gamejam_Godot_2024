@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dp6n05cab4vg4"
-path="res://.godot/imported/cafe_rat.glb-c6558c8c260aec4c6d1660dd8b99db72.scn"
+uid="uid://b6hqdsjgs1swb"
+path="res://.godot/imported/cafe_customers.glb-deec81465d6e74090747ce5bc1918e27.scn"
 
 [deps]
 
-source_file="res://assets/blender/cafe_rat.glb"
-dest_files=["res://.godot/imported/cafe_rat.glb-c6558c8c260aec4c6d1660dd8b99db72.scn"]
+source_file="res://assets/blender/cafe_customers.glb"
+dest_files=["res://.godot/imported/cafe_customers.glb-deec81465d6e74090747ce5bc1918e27.scn"]
 
 [params]
 
@@ -31,10 +31,10 @@ animation/remove_immutable_tracks=true
 import_script/path=""
 _subresources={
 "animations": {
-"moving": {
-"save_to_file/enabled": false,
-"save_to_file/keep_custom_tracks": "",
-"save_to_file/path": "",
+"waddle": {
+"save_to_file/enabled": true,
+"save_to_file/keep_custom_tracks": true,
+"save_to_file/path": "res://assets/animation rework/customer_waddle.res",
 "settings/loop_mode": 1,
 "slice_1/end_frame": 0,
 "slice_1/loop_mode": 0,

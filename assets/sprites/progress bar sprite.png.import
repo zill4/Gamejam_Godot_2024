@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dk8v2vyxgaa4j"
-path.s3tc="res://.godot/imported/progress bar sprite.png-8c683776f41cfd639797b35abc5dab1b.s3tc.ctex"
+path.s3tc="res://.godot/imported/progress bar sprite.png-d36fe038f8a5253d0895d5a7194c7e51.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/sprites/progress bar sprite.png"
-dest_files=["res://.godot/imported/progress bar sprite.png-8c683776f41cfd639797b35abc5dab1b.s3tc.ctex"]
+source_file="res://assets/sprites/progress bar sprite.png"
+dest_files=["res://.godot/imported/progress bar sprite.png-d36fe038f8a5253d0895d5a7194c7e51.s3tc.ctex"]
 
 [params]
 

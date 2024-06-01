@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://brksegj1vwye5"
-path="res://.godot/imported/cafe_room2_withback.glb-232956fea6ad41f257324a520764a68f.scn"
+path="res://.godot/imported/cafe_room2_withback.glb-7f351a8f6fcfb5afd155b1d2ee895359.scn"
 
 [deps]
 
-source_file="res://Assets/ryan_Blender Assets/cafe_room2_withback.glb"
-dest_files=["res://.godot/imported/cafe_room2_withback.glb-232956fea6ad41f257324a520764a68f.scn"]
+source_file="res://assets/ryan_Blender Assets/cafe_room2_withback.glb"
+dest_files=["res://.godot/imported/cafe_room2_withback.glb-7f351a8f6fcfb5afd155b1d2ee895359.scn"]
 
 [params]
 

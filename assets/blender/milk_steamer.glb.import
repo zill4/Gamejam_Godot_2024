@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bjwbwg2lqh2un"
-path="res://.godot/imported/milk_steamer.glb-3135986109df4f56f261f52d229d7599.scn"
+path="res://.godot/imported/milk_steamer.glb-bd910bfb458fe1d20659d51a0a698f30.scn"
 
 [deps]
 
-source_file="res://Assets/blender/milk_steamer.glb"
-dest_files=["res://.godot/imported/milk_steamer.glb-3135986109df4f56f261f52d229d7599.scn"]
+source_file="res://assets/blender/milk_steamer.glb"
+dest_files=["res://.godot/imported/milk_steamer.glb-bd910bfb458fe1d20659d51a0a698f30.scn"]
 
 [params]
 
