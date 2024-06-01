@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctq12jqphoo88"]
 
-[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://assets/blender/espresso machine.glb" id="1_cp7vd"]
+[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://Assets/blender/espresso machine.glb" id="1_cp7vd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pd3hh"]
 size = Vector3(1.75451, 3.02472, 2.64078)
