@@ -1,26 +1,21 @@
 [gd_scene load_steps=5 format=3 uid="uid://ctq12jqphoo88"]
 
-[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://assets/blender/espresso machine.glb" id="1_cp7vd"]
-[ext_resource type="Texture2D" uid="uid://x7jo5wi6q1jo" path="res://assets/sprites/ingredient icons/beans.png" id="2_vw8se"]
-[ext_resource type="AudioStream" uid="uid://panjxcbnf81x" path="res://assets/audio/espresso machine.mp3" id="3_flcxl"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_pd3hh"]
-size = Vector3(1.75451, 3.02472, 2.64078)
+[ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://Assets/blender/espresso machine.glb" id="1_cp7vd"]
+[ext_resource type="Texture2D" uid="uid://x7jo5wi6q1jo" path="res://Assets/sprites/ingredient icons/beans.png" id="2_vw8se"]
+[ext_resource type="AudioStream" uid="uid://panjxcbnf81x" path="res://Assets/audio/espresso machine.mp3" id="3_flcxl"]
+[ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://Scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="4_io18x"]
 
 [node name="espresso machine" instance=ExtResource("1_cp7vd")]
 transform = Transform3D(-9.17939e-09, 0, 0.21, 0, 0.21, 0, -0.21, 0, -9.17939e-09, 0, 0, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0.674789, -0.20069, 0.0479889)
-shape = SubResource("BoxShape3D_pd3hh")
-
-[node name="Sprite3D" type="Sprite3D" parent="." index="2"]
+[node name="Sprite3D" type="Sprite3D" parent="." index="1"]
 transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 0.057404, 2.34359, 2.5092e-09)
 texture = ExtResource("2_vw8se")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="2"]
 stream = ExtResource("3_flcxl")
 max_distance = 2.0
 bus = &"sfx"
+
+[node name="InteractionTrigger" parent="." index="3" instance=ExtResource("4_io18x")]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 6.29131e-10, 0, -0.0143928)

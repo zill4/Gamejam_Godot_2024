@@ -9,6 +9,7 @@ public partial class PlayerHUD : Control
     private Label WaveLabel;
     private Label TimerLabel;
     private Label CountdownLabel;
+    private Label PromptLabel;
 
 
     // Called when the node enters the scene tree for the first time.
@@ -18,9 +19,22 @@ public partial class PlayerHUD : Control
         WaveLabel = GetNode<Label>("Wave");
         TimerLabel = GetNode<Label>("Timer");
         CountdownLabel = GetNode<Label>("Countdown");
+        PromptLabel = GetNode<Label>("Prompt");
         CountdownLabel.Hide();
+        PromptLabel.Hide();
     }
 
+    public void ShowPrompt(string prompt)
+    {
+        PromptLabel.Text = prompt;
+        PromptLabel.Show();
+    }
+
+    public void HidePrompt()
+    {
+        PromptLabel.Hide();
+    }
+    
     public void ShowMessage(string message)
     {
         MessageLabel.Text = message;

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cegxgnwccqcfr"
-path="res://.godot/imported/milk steam.mp3-e4e7120f0c30bb702d2047e387dd546f.mp3str"
+path="res://.godot/imported/milk steam.mp3-ffc57062d71e7dac65bfa84a420d019c.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/milk steam.mp3"
-dest_files=["res://.godot/imported/milk steam.mp3-e4e7120f0c30bb702d2047e387dd546f.mp3str"]
+source_file="res://Assets/audio/milk steam.mp3"
+dest_files=["res://.godot/imported/milk steam.mp3-ffc57062d71e7dac65bfa84a420d019c.mp3str"]
 
 [params]
 

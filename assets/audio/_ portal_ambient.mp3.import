@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c31snocwx2wk0"
-path="res://.godot/imported/_ portal_ambient.mp3-fc73f88bd98be62abd9e7fc9fc655c70.mp3str"
+path="res://.godot/imported/_ portal_ambient.mp3-8b869ef42ff4ff4450596712a74ca11e.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/_ portal_ambient.mp3"
-dest_files=["res://.godot/imported/_ portal_ambient.mp3-fc73f88bd98be62abd9e7fc9fc655c70.mp3str"]
+source_file="res://Assets/audio/_ portal_ambient.mp3"
+dest_files=["res://.godot/imported/_ portal_ambient.mp3-8b869ef42ff4ff4450596712a74ca11e.mp3str"]
 
 [params]
 

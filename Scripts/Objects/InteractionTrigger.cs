@@ -19,7 +19,7 @@ public partial class InteractionTrigger : Area3D
 
     private void OnBodyEntered(Node body)
     {
-        GD.Print("MEOW entered interact class. :3");
+        // GD.Print("MEOW entered interact class. :3");
         if (body.GetType() == typeof(Player))
         {
             GD.Print("entered interact class. :3");
@@ -30,7 +30,7 @@ public partial class InteractionTrigger : Area3D
 
     private void OnBodyExited(Node body)
     {
-         GD.Print($"MEOW entered interact class. {body.Name} {body.GetType()} {body.Owner} {body.GetParent()} {body.GetPath()} {body.GetGroups()}");
+        //  GD.Print($"MEOW entered interact class. {body.Name} {body.GetType()} {body.Owner} {body.GetParent()} {body.GetPath()} {body.GetGroups()}");
         if (body.IsInGroup("Player"))
         {
             GD.Print("exited interact class. :3");

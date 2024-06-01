@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cg7mwkkcoc0f2"]
+[gd_scene load_steps=7 format=3 uid="uid://cg7mwkkcoc0f2"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/PlayerHUD.cs" id="1_205xu"]
 
@@ -12,6 +12,9 @@ font_size = 69
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_v1ur6"]
+font_size = 69
+
+[sub_resource type="LabelSettings" id="LabelSettings_8hqqe"]
 font_size = 69
 
 [node name="PlayerHud" type="Control"]
@@ -66,3 +69,18 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Next Round: "
 label_settings = SubResource("LabelSettings_v1ur6")
+
+[node name="Prompt" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -267.0
+offset_right = 193.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "PROMPT"
+label_settings = SubResource("LabelSettings_8hqqe")

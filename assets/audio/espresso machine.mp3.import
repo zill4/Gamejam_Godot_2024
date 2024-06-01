@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://panjxcbnf81x"
-path="res://.godot/imported/espresso machine.mp3-00cbebf66390a002c23d05bac54e839c.mp3str"
+path="res://.godot/imported/espresso machine.mp3-bba5f88a394e7c35fc05c75ca6c6bc97.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/espresso machine.mp3"
-dest_files=["res://.godot/imported/espresso machine.mp3-00cbebf66390a002c23d05bac54e839c.mp3str"]
+source_file="res://Assets/audio/espresso machine.mp3"
+dest_files=["res://.godot/imported/espresso machine.mp3-bba5f88a394e7c35fc05c75ca6c6bc97.mp3str"]
 
 [params]
 

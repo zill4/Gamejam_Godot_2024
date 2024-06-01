@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://djoui17ffd1f7"
-path="res://.godot/imported/rat cafe_this is a normal cafe2.mp3-13d2f37cff01345547fd869e70698c1e.mp3str"
+path="res://.godot/imported/rat cafe_this is a normal cafe2.mp3-541672ebe9c8bbc9df912a6db6cd78a9.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/rat cafe_this is a normal cafe2.mp3"
-dest_files=["res://.godot/imported/rat cafe_this is a normal cafe2.mp3-13d2f37cff01345547fd869e70698c1e.mp3str"]
+source_file="res://Assets/audio/rat cafe_this is a normal cafe2.mp3"
+dest_files=["res://.godot/imported/rat cafe_this is a normal cafe2.mp3-541672ebe9c8bbc9df912a6db6cd78a9.mp3str"]
 
 [params]
 

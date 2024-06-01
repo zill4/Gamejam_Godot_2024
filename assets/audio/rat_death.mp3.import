@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bbbyijng2duq"
-path="res://.godot/imported/rat_death.mp3-f572e3dc2bc87736a2b420634d4bde1d.mp3str"
+path="res://.godot/imported/rat_death.mp3-644325d8f690615f0bb0479e2d6e879b.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/rat_death.mp3"
-dest_files=["res://.godot/imported/rat_death.mp3-f572e3dc2bc87736a2b420634d4bde1d.mp3str"]
+source_file="res://Assets/audio/rat_death.mp3"
+dest_files=["res://.godot/imported/rat_death.mp3-644325d8f690615f0bb0479e2d6e879b.mp3str"]
 
 [params]
 

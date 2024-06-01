@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnt8o6fquxk6f"
-path.s3tc="res://.godot/imported/hazelnut.png-8e68f861f8bb747ceb0e772096d1e1da.s3tc.ctex"
+path.s3tc="res://.godot/imported/hazelnut.png-1a821724a28400adf3e410b199648ad6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/ingredient icons/hazelnut.png"
-dest_files=["res://.godot/imported/hazelnut.png-8e68f861f8bb747ceb0e772096d1e1da.s3tc.ctex"]
+source_file="res://Assets/sprites/ingredient icons/hazelnut.png"
+dest_files=["res://.godot/imported/hazelnut.png-1a821724a28400adf3e410b199648ad6.s3tc.ctex"]
 
 [params]
 

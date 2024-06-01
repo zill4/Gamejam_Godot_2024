@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://x413ligkgxh6"
-path="res://.godot/imported/Adobe sound_tic.wav-7d0e1c80047cae4fe5b659bdaee72a29.sample"
+path="res://.godot/imported/Adobe sound_tic.wav-ba5b4fbc94b994e9de50e1075891b1be.sample"
 
 [deps]
 
-source_file="res://assets/audio/Adobe sound_tic.wav"
-dest_files=["res://.godot/imported/Adobe sound_tic.wav-7d0e1c80047cae4fe5b659bdaee72a29.sample"]
+source_file="res://Assets/audio/Adobe sound_tic.wav"
+dest_files=["res://.godot/imported/Adobe sound_tic.wav-ba5b4fbc94b994e9de50e1075891b1be.sample"]
 
 [params]
 

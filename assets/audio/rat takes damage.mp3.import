@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://b7tm5mgi8qckv"
-path="res://.godot/imported/rat takes damage.mp3-0d6d365ea48ecd55eea945c59df96276.mp3str"
+path="res://.godot/imported/rat takes damage.mp3-d3303731c260901757714d94da927c90.mp3str"
 
 [deps]
 
-source_file="res://assets/audio/rat takes damage.mp3"
-dest_files=["res://.godot/imported/rat takes damage.mp3-0d6d365ea48ecd55eea945c59df96276.mp3str"]
+source_file="res://Assets/audio/rat takes damage.mp3"
+dest_files=["res://.godot/imported/rat takes damage.mp3-d3303731c260901757714d94da927c90.mp3str"]
 
 [params]
 
