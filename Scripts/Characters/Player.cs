@@ -5,13 +5,20 @@ public partial class Player : CharacterBody3D
 {
 	[Export]
     public float Sensitivity = 0.1f; // Mouse sensitivity
+	private AnimationPlayer _animationPlayer;
+	private bool _canInteract = false;
+    private Interactable _currentInteractable = null;
+	private Node3D _twistPivotNode;
+	
+
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
-
-	private AnimationPlayer _animationPlayer;
-	private Node3D _twistPivotNode;
+	
+	
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
+    
+
 
 	public override void _Ready()
 	{
@@ -80,4 +87,26 @@ public partial class Player : CharacterBody3D
 		Velocity = velocity;
 		MoveAndSlide();
 	}
+
+	    // Change these methods to public to allow access from Interactable
+    public void _on_Area3D_body_entered(Node body)
+    {
+		GD.Print("Not crazy entered area. :3");
+        if (body is Interactable interactable)
+        {
+			 GD.Print("enter area.");
+            _canInteract = true;
+            _currentInteractable = interactable;
+        }
+    }
+
+    public void _on_Area3D_body_exited(Node body)
+    {
+        if (body is Interactable interactable && interactable == _currentInteractable)
+        {
+			 GD.Print("exit area.");
+            _canInteract = false;
+            _currentInteractable = null;
+        }
+    }
 }

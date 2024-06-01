@@ -19,25 +19,26 @@ public partial class InteractionTrigger : Area3D
 
     private void OnBodyEntered(Node body)
     {
-        if (body.HasMethod("Interact"))
+        GD.Print("MEOW entered interact class. :3");
+        if (body.GetType() == typeof(Player))
         {
-            GD.Print($" triggered by {body.Name}");
-            // Add your custom logic here
-			_playerHUD.ShowMessage($"Press 'E' to interact with  MEOW");
-            _currentInteractable = body;
+            GD.Print("entered interact class. :3");
+            Player player = (Player)body;
+            player.CallDeferred(nameof(Player._on_Area3D_body_entered), this);
         }
     }
 
     private void OnBodyExited(Node body)
     {
-        if (_currentInteractable == body)
+         GD.Print($"MEOW entered interact class. {body.Name} {body.GetType()} {body.Owner} {body.GetParent()} {body.GetPath()} {body.GetGroups()}");
+        if (body.IsInGroup("Player"))
         {
-            GD.Print($"{body.Name} exited  trigger area");
-            // Add your custom logic here
-			_playerHUD.ShowMessage($"Go find a coffee machine pls :3");
-            _currentInteractable = null;
+            GD.Print("exited interact class. :3");
+            Player player = (Player)body;
+            player.CallDeferred(nameof(Player._on_Area3D_body_exited), this);
         }
     }
+
 
     public override void _Input(InputEvent @event)
     {

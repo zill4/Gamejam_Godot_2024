@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/syrup_bottle_hazel.tscn" id="7_qp5mn"]
 [ext_resource type="PackedScene" uid="uid://c3h10mrfl4yi0" path="res://Scenes/objects/cash_register.tscn" id="7_s018i"]
 [ext_resource type="PackedScene" uid="uid://bmrn0xjqyaej4" path="res://Scenes/objects/syrup_bottle_2.tscn" id="8_nlulf"]
-[ext_resource type="PackedScene" path="res://scenes/objects/milk_steamer.tscn" id="9_7loks"]
+[ext_resource type="PackedScene" uid="uid://drvu3p7cj80e6" path="res://scenes/objects/milk_steamer.tscn" id="9_7loks"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6r1uv"]
 resource_name = "rug2"

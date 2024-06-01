@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cme6bdgmc4bdu"]
+[gd_scene load_steps=3 format=3 uid="uid://drvu3p7cj80e6"]
 
-[ext_resource type="PackedScene" uid="uid://bjwbwg2lqh2un" path="res://assets/blender/milk_steamer.glb" id="1_43hxc"]
+[ext_resource type="PackedScene" uid="uid://bjwbwg2lqh2un" path="res://Assets/blender/milk_steamer.glb" id="1_43hxc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u56x"]
 size = Vector3(0.301155, 1.01096, 0.462265)
