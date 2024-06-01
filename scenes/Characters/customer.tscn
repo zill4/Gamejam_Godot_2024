@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dewwmu0atj32a"]
+
+[ext_resource type="PackedScene" uid="uid://b6hqdsjgs1swb" path="res://assets/blender/cafe_customers.glb" id="1_lkbm5"]
+
+[node name="cafe_customers" instance=ExtResource("1_lkbm5")]
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(-0.0142233, -0.0329779, -0.00372446)
+bones/1/rotation = Quaternion(-0.0660442, -0.311704, -0.019051, 0.94769)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(-0.0210595, -0.00231726, -0.109353, 0.993777)
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "waddle"
