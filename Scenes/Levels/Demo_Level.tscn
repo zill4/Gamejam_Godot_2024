@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3e5cwd5mxs1n"]
+[gd_scene load_steps=11 format=3 uid="uid://d3e5cwd5mxs1n"]
 
 [ext_resource type="PackedScene" uid="uid://b6b0q3nmtmsa6" path="res://Scenes/level_cafe.tscn" id="1_pdi3k"]
 [ext_resource type="Script" path="res://Scripts/Game/GameManager.cs" id="1_ubqdq"]
 [ext_resource type="PackedScene" uid="uid://ocwvwwt1i6f0" path="res://Scenes/Characters/Player.tscn" id="2_gd4s0"]
 [ext_resource type="PackedScene" uid="uid://cg7mwkkcoc0f2" path="res://Scenes/UI/PlayerHUD.tscn" id="3_58dwy"]
+[ext_resource type="PackedScene" uid="uid://dxm311sq6yljs" path="res://Scenes/Game/CustomerSpawnPoint.tscn" id="5_b22us"]
+[ext_resource type="PackedScene" uid="uid://bqib3k85huk2l" path="res://Scenes/Game/TargetPoint.tscn" id="6_4b7w3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_liojj"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -18,6 +20,8 @@ sky = SubResource("Sky_puwun")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="Curve3D" id="Curve3D_s20ch"]
+
 [node name="Game2" type="Node3D"]
 script = ExtResource("1_ubqdq")
 
@@ -31,5 +35,27 @@ shadow_enabled = true
 [node name="level_cafe" parent="." instance=ExtResource("1_pdi3k")]
 
 [node name="player" parent="." instance=ExtResource("2_gd4s0")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 4.35761)
 
 [node name="PlayerHud" parent="." instance=ExtResource("3_58dwy")]
+
+[node name="CustomerSpawnPoint" parent="." instance=ExtResource("5_b22us")]
+transform = Transform3D(0.780878, 0, 0, 0, 0.780878, 0, 0, 0, 0.780878, -2.89112, 0.477211, -1.81987)
+
+[node name="TargetPoints" type="Node3D" parent="."]
+
+[node name="TargetPoint" parent="TargetPoints" instance=ExtResource("6_4b7w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.15425, 0.166778, 0)
+
+[node name="TargetPoint2" parent="TargetPoints" instance=ExtResource("6_4b7w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.272533, 0)
+
+[node name="TargetPoint3" parent="TargetPoints" instance=ExtResource("6_4b7w3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.54999, 0.377304, 0)
+
+[node name="Paths" type="Node3D" parent="."]
+
+[node name="Path1" type="Path3D" parent="Paths"]
+curve = SubResource("Curve3D_s20ch")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Paths/Path1"]

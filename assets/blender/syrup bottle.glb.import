@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dk5xpp3nbao5m"
-path="res://.godot/imported/syrup bottle.glb-32b13fe3be47eaed671298cf78f96325.scn"
+path="res://.godot/imported/syrup bottle.glb-526c8976a3ddc0daee594e5137ee6cc7.scn"
 
 [deps]
 
-source_file="res://assets/blender/syrup bottle.glb"
-dest_files=["res://.godot/imported/syrup bottle.glb-32b13fe3be47eaed671298cf78f96325.scn"]
+source_file="res://Assets/blender/syrup bottle.glb"
+dest_files=["res://.godot/imported/syrup bottle.glb-526c8976a3ddc0daee594e5137ee6cc7.scn"]
 
 [params]
 

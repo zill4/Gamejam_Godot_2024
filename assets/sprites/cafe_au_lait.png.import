@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bekmgmcx1b6u8"
-path.s3tc="res://.godot/imported/cafe_au_lait.png-664a3385cc4284a2a1d09b5a28fa79d6.s3tc.ctex"
+path.s3tc="res://.godot/imported/cafe_au_lait.png-e33bc1b4ce97cd3b76aa7667205a6fd5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/cafe_au_lait.png"
-dest_files=["res://.godot/imported/cafe_au_lait.png-664a3385cc4284a2a1d09b5a28fa79d6.s3tc.ctex"]
+source_file="res://Assets/sprites/cafe_au_lait.png"
+dest_files=["res://.godot/imported/cafe_au_lait.png-e33bc1b4ce97cd3b76aa7667205a6fd5.s3tc.ctex"]
 
 [params]
 

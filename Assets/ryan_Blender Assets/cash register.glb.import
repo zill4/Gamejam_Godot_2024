@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bibt5mamsdbpp"
-path="res://.godot/imported/cash register.glb-52da7948d845f1d604b309b66dbc4ecf.scn"
+path="res://.godot/imported/cash register.glb-33196ad3fcfe8a9dd9498384b188b9f3.scn"
 
 [deps]
 
-source_file="res://assets/ryan_Blender Assets/cash register.glb"
-dest_files=["res://.godot/imported/cash register.glb-52da7948d845f1d604b309b66dbc4ecf.scn"]
+source_file="res://Assets/ryan_Blender Assets/cash register.glb"
+dest_files=["res://.godot/imported/cash register.glb-33196ad3fcfe8a9dd9498384b188b9f3.scn"]
 
 [params]
 

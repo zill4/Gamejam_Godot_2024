@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://byfu7qyu2etre"
-path="res://.godot/imported/barista_blob.glb-e819dd904adcf1e2d5710fb020448856.scn"
+path="res://.godot/imported/barista_blob.glb-9c4a10c2d6fb98c4b8e9935690475172.scn"
 
 [deps]
 
-source_file="res://assets/ryan_Blender Assets/barista_blob.glb"
-dest_files=["res://.godot/imported/barista_blob.glb-e819dd904adcf1e2d5710fb020448856.scn"]
+source_file="res://Assets/ryan_Blender Assets/barista_blob.glb"
+dest_files=["res://.godot/imported/barista_blob.glb-9c4a10c2d6fb98c4b8e9935690475172.scn"]
 
 [params]
 

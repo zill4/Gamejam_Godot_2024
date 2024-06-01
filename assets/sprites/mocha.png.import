@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmn52ymdcudh7"
-path.s3tc="res://.godot/imported/mocha.png-81b767dfe5f5c337e440cf7ee83e80a2.s3tc.ctex"
+path.s3tc="res://.godot/imported/mocha.png-a863f39d8fc2a29cf972f52a0db26da4.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sprites/mocha.png"
-dest_files=["res://.godot/imported/mocha.png-81b767dfe5f5c337e440cf7ee83e80a2.s3tc.ctex"]
+source_file="res://Assets/sprites/mocha.png"
+dest_files=["res://.godot/imported/mocha.png-a863f39d8fc2a29cf972f52a0db26da4.s3tc.ctex"]
 
 [params]
 
