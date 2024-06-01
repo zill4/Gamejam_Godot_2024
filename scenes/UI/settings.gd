@@ -28,18 +28,14 @@ func _ready():
 func _play_UI_tick():
 	tick.play(0.0)
 
-
-	if (Input.is_action_just_released("esc")):
-		settings.visible = true
-		print("opened settings")
+func _unhandled_input(event):
+	if event is InputEventKey:
+		if event.pressed and event.keycode == KEY_ESCAPE:
+			settings.visible = true
+			print("opened settings")
 
 func _on_back_button_pressed():
-	
-	_play_UI_tick()
 	settings.visible = false
-
-func _on_quit_button_pressed():
-	get_tree().quit()
 
 #VOLUME SLIDERS
 #VOLUME SLIDERS
@@ -47,13 +43,12 @@ func _on_quit_button_pressed():
 
 func _on_master_slider_value_changed(value):
 	_play_UI_tick()
-	AudioServer.set_bus_volume_db (0, 0 + (value/log(10)))
-
-func _on_music_slider_value_changed(value):
-	_play_UI_tick()
-	AudioServer.set_bus_volume_db (2, 0 + (value/log(10)))
+	AudioServer.set_bus_volume_db(0, 0 + (value/log(10)))
 
 func _on_sfx_slider_value_changed(value):
 	_play_UI_tick()
-	AudioServer.set_bus_volume_db (1, 0 + (value/log(10)))
+	AudioServer.set_bus_volume_db(1, 0 + (value/log(10)))
 
+func _on_music_slider_value_changed(value):
+	_play_UI_tick()
+	AudioServer.set_bus_volume_db(2, 0 + (value/log(10)))

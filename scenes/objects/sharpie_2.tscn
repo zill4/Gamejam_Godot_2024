@@ -1,5 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0231snud8pck"]
+[gd_scene load_steps=3 format=3 uid="uid://c0231snud8pck"]
 
 [ext_resource type="PackedScene" uid="uid://ccqvj6kpxgupl" path="res://assets/blender/sharpie.glb" id="1_yen2k"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5j1pv"]
+radius = 0.0113136
+height = 0.149498
+
 [node name="sharpie2" instance=ExtResource("1_yen2k")]
+transform = Transform3D(0.891489, -0.453042, 0, 0.453042, 0.891489, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.913865, 0.00819835, 0.405936, -0.406019, 0.0184528, 0.913679, 0, -0.999796, 0.020192, 0, 0, -0.0672076)
+shape = SubResource("CapsuleShape3D_5j1pv")
