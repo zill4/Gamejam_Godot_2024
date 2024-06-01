@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf6nre1k14cbv"]
+[gd_scene load_steps=5 format=3 uid="uid://bf6nre1k14cbv"]
 
 [ext_resource type="PackedScene" uid="uid://dq8urien5cwgo" path="res://assets/blender/portal_goop.glb" id="1_h2rhq"]
+[ext_resource type="AudioStream" uid="uid://c31snocwx2wk0" path="res://assets/audio/_ portal_ambient.mp3" id="2_n6wuw"]
+[ext_resource type="AudioStream" uid="uid://df8spjaid02mx" path="res://assets/audio/_ portal_change size.mp3" id="3_7tdtg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ywkj"]
 radius = 1.11932
@@ -15,3 +17,14 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114561, 1.02287, 0)
 shape = SubResource("CapsuleShape3D_4ywkj")
 disabled = true
+
+[node name="ambient" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("2_n6wuw")
+volume_db = -2.835
+autoplay = true
+bus = &"sfx"
+
+[node name="portal_change size" type="AudioStreamPlayer3D" parent="." index="6"]
+stream = ExtResource("3_7tdtg")
+volume_db = -3.646
+bus = &"sfx"

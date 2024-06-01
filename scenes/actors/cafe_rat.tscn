@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://knyx2v63afj6"]
+[gd_scene load_steps=6 format=3 uid="uid://knyx2v63afj6"]
 
-[ext_resource type="PackedScene" uid="uid://dp6n05cab4vg4" path="res://Assets/blender/cafe_rat.glb" id="1_kwenr"]
+[ext_resource type="PackedScene" uid="uid://dp6n05cab4vg4" path="res://assets/blender/cafe_rat.glb" id="1_kwenr"]
 [ext_resource type="Script" path="res://scripts/cafe_rat.gd" id="2_pyrsv"]
+[ext_resource type="AudioStream" uid="uid://d051xfh5efspu" path="res://assets/audio/rat idle.mp3" id="3_u46e7"]
+[ext_resource type="AudioStream" uid="uid://b7tm5mgi8qckv" path="res://assets/audio/rat takes damage.mp3" id="4_cjed0"]
+[ext_resource type="AudioStream" uid="uid://bbbyijng2duq" path="res://assets/audio/rat_death.mp3" id="5_gj624"]
 
 [node name="cafe_rat" instance=ExtResource("1_kwenr")]
 script = ExtResource("2_pyrsv")
@@ -37,5 +40,18 @@ autoplay = "moving"
 
 [node name="rat_death_timer" type="Timer" parent="." index="2"]
 wait_time = 0.221
+
+[node name="rat_idle" type="AudioStreamPlayer3D" parent="." index="3"]
+stream = ExtResource("3_u46e7")
+autoplay = true
+bus = &"sfx"
+
+[node name="rat_takes_damage" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("4_cjed0")
+bus = &"sfx"
+
+[node name="rat_death" type="AudioStreamPlayer3D" parent="." index="5"]
+stream = ExtResource("5_gj624")
+bus = &"sfx"
 
 [connection signal="timeout" from="rat_death_timer" to="." method="_on_timer_timeout"]

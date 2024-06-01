@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c3h10mrfl4yi0"]
 
 [ext_resource type="PackedScene" uid="uid://drnw708tuxu0r" path="res://assets/blender/cash register.glb" id="1_qx2wq"]
-[ext_resource type="AudioStream" uid="uid://q2f5be0uakcn" path="res://assets/audio/godot jam 2024 sfx cash register.mp3" id="2_bscht"]
+[ext_resource type="AudioStream" uid="uid://q2f5be0uakcn" path="res://assets/audio/cash register.mp3" id="2_wmtuk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o32vk"]
 size = Vector3(1.10217, 2.25381, 1.44066)
@@ -73,5 +73,5 @@ outline_modulate = Color(0, 0, 0, 0)
 text = "test"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
-stream = ExtResource("2_bscht")
+stream = ExtResource("2_wmtuk")
 bus = &"sfx"

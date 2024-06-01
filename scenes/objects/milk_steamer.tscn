@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bjwbwg2lqh2un" path="res://assets/blender/milk_steamer.glb" id="1_43hxc"]
 [ext_resource type="Texture2D" uid="uid://qf04jr1daayr" path="res://assets/sprites/ingredient icons/milk.png" id="2_7mj0i"]
-[ext_resource type="AudioStream" uid="uid://cegxgnwccqcfr" path="res://assets/audio/godot jam 2024 sfx milk steam.mp3" id="3_evlkn"]
+[ext_resource type="AudioStream" uid="uid://cegxgnwccqcfr" path="res://assets/audio/milk steam.mp3" id="3_7i24i"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u56x"]
 size = Vector3(0.301155, 1.01096, 0.462265)
@@ -20,5 +20,5 @@ transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.680354, 0)
 texture = ExtResource("2_7mj0i")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
-stream = ExtResource("3_evlkn")
+stream = ExtResource("3_7i24i")
 bus = &"sfx"

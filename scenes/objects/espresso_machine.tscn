@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dv0lg0khf0t1t" path="res://assets/blender/espresso machine.glb" id="1_cp7vd"]
 [ext_resource type="Texture2D" uid="uid://x7jo5wi6q1jo" path="res://assets/sprites/ingredient icons/beans.png" id="2_vw8se"]
-[ext_resource type="AudioStream" uid="uid://panjxcbnf81x" path="res://assets/audio/godot jam 2024 sfx espresso machine.mp3" id="3_ro8ul"]
+[ext_resource type="AudioStream" uid="uid://panjxcbnf81x" path="res://assets/audio/espresso machine.mp3" id="3_flcxl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pd3hh"]
 size = Vector3(1.75451, 3.02472, 2.64078)
@@ -21,5 +21,5 @@ transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 
 texture = ExtResource("2_vw8se")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="3"]
-stream = ExtResource("3_ro8ul")
+stream = ExtResource("3_flcxl")
 bus = &"sfx"

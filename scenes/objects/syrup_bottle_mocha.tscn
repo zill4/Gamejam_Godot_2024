@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmrn0xjqyaej4"]
+[gd_scene load_steps=11 format=3 uid="uid://bmrn0xjqyaej4"]
 
 [ext_resource type="PackedScene" uid="uid://dk5xpp3nbao5m" path="res://assets/blender/syrup bottle.glb" id="1_qw3cp"]
 [ext_resource type="Texture2D" uid="uid://rxpa5k13nv7i" path="res://assets/sprites/ingredient icons/mocha.png" id="2_nkm4y"]
+[ext_resource type="AudioStream" uid="uid://dbyjjuuju6n27" path="res://assets/audio/godot jam 2024 sfx syrup.mp3" id="3_dlxv8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pjbor"]
 albedo_color = Color(0.347374, 0.0981668, 0.0433, 1)
@@ -129,3 +130,7 @@ texture = ExtResource("2_nkm4y")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587097, -0.650772, 0.0829926)
 shape = SubResource("BoxShape3D_r0sbv")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("3_dlxv8")
+bus = &"sfx"
