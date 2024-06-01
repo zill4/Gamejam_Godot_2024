@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q2f5be0uakcn"
+path="res://.godot/imported/godot jam 2024 sfx cash register.mp3-6e1a45fc66b7e8623438ef0820c00526.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/godot jam 2024 sfx cash register.mp3"
+dest_files=["res://.godot/imported/godot jam 2024 sfx cash register.mp3-6e1a45fc66b7e8623438ef0820c00526.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

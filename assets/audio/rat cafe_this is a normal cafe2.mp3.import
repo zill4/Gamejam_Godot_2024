@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djoui17ffd1f7"
+path="res://.godot/imported/rat cafe_this is a normal cafe2.mp3-13d2f37cff01345547fd869e70698c1e.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/rat cafe_this is a normal cafe2.mp3"
+dest_files=["res://.godot/imported/rat cafe_this is a normal cafe2.mp3-13d2f37cff01345547fd869e70698c1e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

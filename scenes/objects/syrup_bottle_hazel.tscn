@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbn5mey3y176h"]
+[gd_scene load_steps=11 format=3 uid="uid://dbn5mey3y176h"]
 
 [ext_resource type="PackedScene" uid="uid://dk5xpp3nbao5m" path="res://assets/blender/syrup bottle.glb" id="1_q3vtw"]
 [ext_resource type="Texture2D" uid="uid://bnt8o6fquxk6f" path="res://assets/sprites/ingredient icons/hazelnut.png" id="2_5tyb1"]
+[ext_resource type="AudioStream" uid="uid://dbyjjuuju6n27" path="res://assets/audio/godot jam 2024 sfx syrup.mp3" id="3_ny6pn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc0ai"]
 albedo_color = Color(0.690573, 0.333953, 0.0991809, 1)
@@ -104,6 +105,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_0ypp0")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_r7jpq"]
+size = Vector3(2.17419, 5.42679, 1.98447)
+
 [node name="syrup bottle2" instance=ExtResource("1_q3vtw")]
 transform = Transform3D(2.22928e-08, 0, -0.17, 0, 0.17, 0, 0.17, 0, 2.22928e-08, 0, 0, 0)
 
@@ -120,3 +124,14 @@ surface_material_override/1 = SubResource("StandardMaterial3D_pc0ai")
 [node name="Sprite3D" type="Sprite3D" parent="." index="2"]
 transform = Transform3D(3.77489e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, 3.77489e-08, 5.71187e-08, 2.74947, -0.435574)
 texture = ExtResource("2_5tyb1")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.54539e-08, 0, -0.575395)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587097, -0.650772, 0.0829926)
+shape = SubResource("BoxShape3D_r7jpq")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="4"]
+stream = ExtResource("3_ny6pn")
+bus = &"sfx"
