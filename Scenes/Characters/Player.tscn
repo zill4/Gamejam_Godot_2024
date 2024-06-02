@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bauqeuhalrrbf" path="res://Assets/sprites/back arrow.png" id="8_j17vw"]
 [ext_resource type="Script" path="res://scenes/UI/settings.gd" id="8_mll50"]
 [ext_resource type="AudioStream" uid="uid://x413ligkgxh6" path="res://Assets/audio/Adobe sound_tic.wav" id="10_7dkoh"]
-[ext_resource type="PackedScene" uid="uid://c0231snud8pck" path="res://scenes/objects/sharpie_2.tscn" id="11_1dwc3"]
+[ext_resource type="PackedScene" uid="uid://c0231snud8pck" path="res://Scenes/objects/sharpie_2.tscn" id="11_1dwc3"]
 [ext_resource type="PackedScene" uid="uid://cged4tc16rmh1" path="res://Scenes/objects/PopupBubble.tscn" id="12_ukjou"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avc12"]

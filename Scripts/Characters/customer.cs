@@ -15,11 +15,11 @@ public partial class customer : CharacterBody3D
 
 	private readonly Dictionary<string, string[]> _drinks = new Dictionary<string, string[]>
 	{
-		{ "Mocha", new string[] { "Espresso", "Milk", "Mocha", "Cup" } },
-		{ "Hazelnut Latte", new string[] { "Espresso", "Milk", "Hazelnut", "Cup" } },
-		{ "Hot Chocolate", new string[] { "Milk", "Cup", "Mocha"} },
-		{ "Espresso", new string[] { "Espresso", "Cup" } },
-		{ "Latte", new string[] { "Espresso", "Milk", "Cup" } }
+		{ "Mocha", new string[] { "espresso", "milk", "mocha", "cup" } },
+		{ "Hazelnut Latte", new string[] { "espresso", "milk", "hazelnut", "cup" } },
+		{ "Hot Chocolate", new string[] { "milk", "cup", "mocha"} },
+		{ "Espresso", new string[] { "espresso", "cup" } },
+		{ "Latte", new string[] { "espresso", "milk", "cup" } }
 	};
 
 	public override void _Ready()
@@ -50,6 +50,20 @@ public partial class customer : CharacterBody3D
 	{
 		_targetPosition = position;
 	}
+    public void DeleteCustomer()
+    {
+        QueueFree();
+    }
+
+	public Order getOrder()
+	{
+		return Order;
+	}
+
+	public void SetStatus(OrderStatus status)
+	{
+		Order.Status = status;
+	}
 
 	private void GenerateRandomOrder()
 	{
@@ -57,8 +71,9 @@ public partial class customer : CharacterBody3D
 		int index = rand.Next(_drinks.Count);
 		List<string> ingredients = new List<string>(_drinks[_drinks.Keys.ElementAt(index)]);
 		Drink drink = new Drink(ingredients, _drinks.Keys.ElementAt(index));
+		// set Order
 		Order = new Order(drink);
-		GD.Print("Generated Order: " + string.Join(", ", Order.Drink.Ingredients) + " - " + Order.Drink.Name);
+		// GD.Print("Generated Order: " + string.Join(", ", Order.Drink.Ingredients) + " - " + Order.Drink.Name);
 
 		// set sprite
 		_orderRequestSprite.SetOrderSprite(_drinks.Keys.ElementAt(index));

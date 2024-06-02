@@ -4,18 +4,20 @@ using System;
 public partial class PlayerHUD : Control
 {
 
-    private Label MessageLabel;
+    private Label ScoreLabel;
     private Timer RoundTimer;
     private Label WaveLabel;
     private Label TimerLabel;
     private Label CountdownLabel;
     private Label PromptLabel;
 
+    private int scoreSucceeded = 0;
+    private int scoreFailed = 0;
 
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        MessageLabel = GetNode<Label>("Message");
+        ScoreLabel = GetNode<Label>("Score");
         WaveLabel = GetNode<Label>("Wave");
         TimerLabel = GetNode<Label>("Timer");
         CountdownLabel = GetNode<Label>("Countdown");
@@ -35,11 +37,17 @@ public partial class PlayerHUD : Control
         PromptLabel.Hide();
     }
     
-    public void ShowMessage(string message)
+    public void IncreaseSuccessScore()
     {
-        MessageLabel.Text = message;
-        MessageLabel.Show();
+        scoreSucceeded++;
+        ScoreLabel.Text = $"Succeeded: {scoreSucceeded} Failed: {scoreFailed}";
     }
+    public void IncreaseFailedScore()
+    {
+        scoreFailed++;
+        ScoreLabel.Text = $"Succeeded: {scoreSucceeded} Failed: {scoreFailed}";
+    }
+
 
     public void UpdateWaveLabel(int waveNumber)
     {

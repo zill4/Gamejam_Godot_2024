@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dewwmu0atj32a"]
+[gd_scene load_steps=12 format=3 uid="uid://dewwmu0atj32a"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/customer.cs" id="2_ggnoa"]
 [ext_resource type="Animation" uid="uid://dfr6p45l6kwxg" path="res://Assets/animation rework/customer_waddle.res" id="2_is1rq"]
 [ext_resource type="PackedScene" uid="uid://ljcuami6ea3j" path="res://Scenes/objects/OrderRequest.tscn" id="3_xacmi"]
+[ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://Scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="4_8lyt0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gvybc"]
 resource_name = "rug2"
@@ -202,3 +203,6 @@ shape = SubResource("BoxShape3D_ma3ix")
 
 [node name="OrderRequest" parent="." instance=ExtResource("3_xacmi")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 3.87751, -0.00978106)
+
+[node name="InteractionTrigger" parent="." instance=ExtResource("4_8lyt0")]
+transform = Transform3D(-0.0313875, 0, 1.49967, 0, 1.5, 0, -1.49967, 0, -0.0313875, 0, -0.972319, 0)

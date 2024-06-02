@@ -12,17 +12,21 @@ public partial class Player : CharacterBody3D
 	private Interactable _currentInteractable = null;
 	private Node3D _twistPivotNode;
 	private PlayerHUD _playerHUD;
-	public PopupBubble _popupBubble; 
+	public PopupBubble _popupBubble;
+    private const float ShrinkScale = 0.15f; // Adjust this value to make the sprites smaller or larger
+
+	private bool _canDeleteCustomer = false;
+	private customer _currentCustomer = null;
 	// ingredients
-    private Dictionary<string, int> _ingredients = new Dictionary<string, int>
-        {
-            { "milk", 0 },
-            { "hazelnut", 0 },
-            { "mocha", 0 },
-            { "espresso", 0 },
-            { "cup", 0 }
-        };
-	
+	private Dictionary<string, int> _ingredients = new Dictionary<string, int>
+		{
+			{ "milk", 0 },
+			{ "hazelnut", 0 },
+			{ "mocha", 0 },
+			{ "espresso", 0 },
+			{ "cup", 0 }
+		};
+
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
 
@@ -31,7 +35,20 @@ public partial class Player : CharacterBody3D
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
 
+	public List<string> GetIngredientsList()
+	{
+		List<string> ingredientsList = new List<string>();
 
+		foreach (var ingredient in _ingredients)
+		{
+			if (ingredient.Value >= 1)
+			{
+				ingredientsList.Add(ingredient.Key);
+			}
+		}
+
+		return ingredientsList;
+	}
 
 	public override void _Ready()
 	{
@@ -85,29 +102,66 @@ public partial class Player : CharacterBody3D
 		{
 			Interact(_interactableName);
 		}
+
 	}
 
-    public void ShowPopupBubble()
-    {
-        _popupBubble.Clear(); // Clear any previous content
-        _popupBubble.SetSprite(0, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/milk.png"));
-        _popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/hazelnut.png"));
-        _popupBubble.SetSprite(2, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/beans.png"));
-        _popupBubble.SetSprite(3, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/steamed.png"));
-        _popupBubble.ShowBubble();
-    }
+	public void ShowPopupBubble()
+	{
+		_popupBubble.Clear(); // Clear any previous content
+		_popupBubble.SetSprite(0, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/milk.png"));
+		_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/hazelnut.png"));
+		_popupBubble.SetSprite(2, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/beans.png"));
+		_popupBubble.SetSprite(3, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/steamed.png"));
+		_popupBubble.ShowBubble();
+	}
 
-    public void HidePopupBubble()
-    {
-        _popupBubble.HideBubble();
-    }
+	public void HidePopupBubble()
+	{
+		_popupBubble.HideBubble();
+	}
+
+	public void HandleCustomer()
+	{
+		if (_canDeleteCustomer && _currentCustomer != null)
+		{
+			if (_currentCustomer.getOrder().Drink.CheckIngredients(GetIngredientsList()))
+			{
+				_currentCustomer.SetStatus(OrderStatus.COMPLETED);
+				_playerHUD.IncreaseSuccessScore();
+				_playerHUD.ShowPrompt("Order Completed!");
+			}
+			else
+			{
+				_currentCustomer.SetStatus(OrderStatus.FAILED);
+				_playerHUD.IncreaseFailedScore();
+				_playerHUD.ShowPrompt("Order Failed!");
+			}
+			_currentCustomer.DeleteCustomer();
+			_currentCustomer = null;
+			_canDeleteCustomer = false;
+			ClearIngredients();
+			_popupBubble.Clear(); // Clear any previous content
+		}
+	}
+
+	public void HandlePortal()
+	{
+		if (this.Scale.X == ShrinkScale)
+		{
+			this.Scale = new Vector3(.5f, .5f, .5f);
+		}
+		else
+		{
+			this.Scale = new Vector3(ShrinkScale, ShrinkScale, ShrinkScale);
+		}
+	}
 
 	public void Interact(string interactableName)
 	{
 		switch (interactableName)
 		{
-			case "barrel":
-				HandleBarrel();
+			case "trash":
+				Handletrash();
 				break;
 			case "espresso":
 				HandleEspresso();
@@ -123,6 +177,12 @@ public partial class Player : CharacterBody3D
 				break;
 			case "cup":
 				HandleCup();
+				break;
+			case "customer":
+				HandleCustomer();
+				break;
+			case "portal":
+				HandlePortal();
 				break;
 			default:
 				break;
@@ -165,13 +225,14 @@ public partial class Player : CharacterBody3D
 			Input.MouseMode = Input.MouseModeEnum.Captured;
 		}
 
-    //    if (_popupBubble.Visible)
-    //     {
-    //         Vector3 bubblePosition = GlobalTransform.Origin + new Vector3(0, 2, 0); // Adjust the offset as needed
-    //         Transform3D currentTransform = _popupBubble.GlobalTransform;
-    //         currentTransform.Origin = bubblePosition;
-    //         _popupBubble.GlobalTransform = currentTransform;
-    //     }
+
+		//    if (_popupBubble.Visible)
+		//     {
+		//         Vector3 bubblePosition = GlobalTransform.Origin + new Vector3(0, 2, 0); // Adjust the offset as needed
+		//         Transform3D currentTransform = _popupBubble.GlobalTransform;
+		//         currentTransform.Origin = bubblePosition;
+		//         _popupBubble.GlobalTransform = currentTransform;
+		//     }
 
 
 		Velocity = velocity;
@@ -200,11 +261,11 @@ public partial class Player : CharacterBody3D
 				string parentName = parent.Name;
 
 				GD.Print($"Parent Name: {parentName} Type: {parent.GetParent().Name} {body.GetType().FullName}");
-				if (parentName.Contains("barrel", StringComparison.OrdinalIgnoreCase))
+				if (parentName.Contains("trash", StringComparison.OrdinalIgnoreCase))
 				{
 					_canInteract = true;
-					_interactableName = "barrel";
-					_playerHUD.ShowPrompt("Press E to interact with the barrel.");
+					_interactableName = "trash";
+					_playerHUD.ShowPrompt("Press E to interact with the trash.");
 
 				}
 				if (parentName.Contains("espresso", StringComparison.OrdinalIgnoreCase))
@@ -240,6 +301,20 @@ public partial class Player : CharacterBody3D
 					_interactableName = "cup";
 					_playerHUD.ShowPrompt("Press E to interact with the cup.");
 				}
+				if (parentName.Contains("customer", StringComparison.OrdinalIgnoreCase))
+				{
+					_canInteract = true;
+					_interactableName = "customer";
+					_playerHUD.ShowPrompt("Press E to give drink.");
+					_currentCustomer = parent as customer;
+					_canDeleteCustomer = true;
+				}
+				if (parentName.Contains("portal", StringComparison.OrdinalIgnoreCase))
+				{
+					_canInteract = true;
+					_interactableName = "portal";
+					_playerHUD.ShowPrompt("Press E to enter the portal.");
+				}
 			}
 		}
 	}
@@ -255,11 +330,24 @@ public partial class Player : CharacterBody3D
 			GD.Print("exit area in Player Class.");
 			_currentInteractable = null;
 		}
-	}
-	private void HandleBarrel()
-	{
 
-		GD.Print("Barrel handle");
+		if (body is Area3D)
+		{
+			if (body.GetParent() != null)
+			{
+				Node parent = body.GetParent();
+				string parentName = parent.Name;
+				if (parentName.Contains("customer", StringComparison.OrdinalIgnoreCase))
+				{
+					_canDeleteCustomer = false;
+					_currentCustomer = null;
+					GD.Print("Exited collision with customer.");
+				}
+			}
+		}
+	}
+	private void Handletrash()
+	{
 		ClearIngredients();
 		_popupBubble.Clear(); // Clear any previous content
 	}
@@ -285,7 +373,7 @@ public partial class Player : CharacterBody3D
 		{
 			AddIngredient("espresso");
 			_popupBubble.ShowBubble();
-        	_popupBubble.SetSprite(2, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/beans.png"));
+			_popupBubble.SetSprite(2, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/beans.png"));
 		}
 		else
 		{
@@ -318,10 +406,10 @@ public partial class Player : CharacterBody3D
 			switch (syrupType)
 			{
 				case "hazelnut":
-        			_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/hazelnut.png"));
+					_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/hazelnut.png"));
 					break;
 				case "mocha":
-        			_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/mocha.png"));
+					_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/mocha.png"));
 					break;
 				default:
 					break;

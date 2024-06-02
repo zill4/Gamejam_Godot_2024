@@ -6,7 +6,7 @@
 font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_efdxu"]
-font_size = 69
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_p3wct"]
 font_size = 32
@@ -33,15 +33,15 @@ offset_bottom = 101.0
 text = "Wave: 0"
 label_settings = SubResource("LabelSettings_2aiw7")
 
-[node name="Message" type="Label" parent="."]
+[node name="Score" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -450.0
+offset_left = -689.0
 offset_bottom = 95.0
 grow_horizontal = 0
-text = "Howdy Meow"
+text = "Succeeded: 0 Failed: 0"
 label_settings = SubResource("LabelSettings_efdxu")
 
 [node name="Timer" type="Label" parent="."]

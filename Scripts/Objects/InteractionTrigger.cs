@@ -22,7 +22,11 @@ public partial class InteractionTrigger : Area3D
         // GD.Print("MEOW entered interact class. :3");
         if (body.GetType() == typeof(Player))
         {
-            GD.Print("entered interact class. :3");
+            if (this.GetParent().Name.ToString().Contains("customer"))
+            {
+                GD.Print(":3 its a customer, give em coffeee!!!");
+            }
+
             Player player = (Player)body;
             player.CallDeferred(nameof(Player._on_Area3D_body_entered), this);
         }
@@ -43,9 +47,9 @@ public partial class InteractionTrigger : Area3D
     public override void _Input(InputEvent @event)
     {
         // Check if the player pressed the 'E' key
-        if (@event is InputEventKey inputEventKey && inputEventKey.Pressed && inputEventKey.Keycode == Key.E)
-        {
-            _currentInteractable.Call("Interact");
-        }
+        // if (@event is InputEventKey inputEventKey && inputEventKey.Pressed && inputEventKey.Keycode == Key.E)
+        // {
+        //     _currentInteractable.Call("Interact");
+        // }
     }
 }

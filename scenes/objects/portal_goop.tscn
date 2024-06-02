@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bf6nre1k14cbv"]
+[gd_scene load_steps=7 format=3 uid="uid://bf6nre1k14cbv"]
 
-[ext_resource type="PackedScene" uid="uid://dq8urien5cwgo" path="res://assets/blender/portal_goop.glb" id="1_h2rhq"]
-[ext_resource type="AudioStream" uid="uid://c31snocwx2wk0" path="res://assets/audio/_ portal_ambient.mp3" id="2_n6wuw"]
+[ext_resource type="PackedScene" uid="uid://dq8urien5cwgo" path="res://Assets/blender/portal_goop.glb" id="1_h2rhq"]
+[ext_resource type="AudioStream" uid="uid://c31snocwx2wk0" path="res://Assets/audio/_ portal_ambient.mp3" id="2_n6wuw"]
 [ext_resource type="Script" path="res://scenes/objects/portal_goop.gd" id="2_ulxa1"]
-[ext_resource type="AudioStream" uid="uid://df8spjaid02mx" path="res://assets/audio/_ portal_change size.mp3" id="3_7tdtg"]
+[ext_resource type="AudioStream" uid="uid://df8spjaid02mx" path="res://Assets/audio/_ portal_change size.mp3" id="3_7tdtg"]
+[ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://Scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="5_o8jsv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4ywkj"]
 radius = 1.11932
@@ -35,5 +36,8 @@ bus = &"sfx"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114561, 1.02287, 0)
 shape = SubResource("CapsuleShape3D_4ywkj")
 disabled = true
+
+[node name="InteractionTrigger" parent="." index="7" instance=ExtResource("5_o8jsv")]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, 0.468118, -0.594142, 0.127787)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

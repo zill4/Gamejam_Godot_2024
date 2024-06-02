@@ -12,6 +12,18 @@ public class Drink
         Ingredients = ingredients;
         Name = name;
     }
+
+    public bool CheckIngredients(List<string> ingredients)
+    {
+        HashSet<string> playerIngredientsSet = new HashSet<string>(ingredients);
+        HashSet<string> customerIngredientsSet = new HashSet<string>(Ingredients);
+
+        // Check if playerIngredientsSet contains all elements of customerIngredientsSet
+        GD.Print("Player Ingredients: " + string.Join(", ", playerIngredientsSet));
+        GD.Print("Customer Ingredients: " + string.Join(", ", customerIngredientsSet));
+        GD.Print($"Player Ing: {customerIngredientsSet.IsSubsetOf(playerIngredientsSet)}");
+        return customerIngredientsSet.IsSubsetOf(playerIngredientsSet);
+    }
 }
 
 public enum OrderStatus
