@@ -5,18 +5,20 @@ using System.Collections.Generic;
 public class Drink
 {
     public List<string> Ingredients { get; set; }
+    public string Name { get; set; }
 
-    public Drink(List<string> ingredients)
+    public Drink(List<string> ingredients, string name)
     {
         Ingredients = ingredients;
+        Name = name;
     }
 }
 
 public enum OrderStatus
 {
-    Pending,
-    Completed,
-    Failed
+		WAITING,
+		COMPLETED,
+		FAILED
 }
 
 public class Order
@@ -26,7 +28,7 @@ public class Order
 
     public Order(Drink drink)
     {
-        Status = OrderStatus.Pending;
+        Status = OrderStatus.WAITING;
         Drink = drink;
     }
 }

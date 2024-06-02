@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class customer : CharacterBody3D
 {
@@ -8,17 +9,22 @@ public partial class customer : CharacterBody3D
 	public float Speed = 5.0f;
 	private const float TargetThreshold = 0.1f;
 	public Order Order { get; private set; }
+	
+	public OrderRequest _orderRequestSprite;
 
-	private static readonly List<string[]> DrinkOptions = new List<string[]>
+
+	private readonly Dictionary<string, string[]> _drinks = new Dictionary<string, string[]>
 	{
-		new string[] { "Espresso", "Milk" },
-		new string[] { "Black Tea", "Sugar", "Lemon" },
-		new string[] { "Green Tea", "Honey", "Ginger" },
-		new string[] { "Latte", "Milk", "Vanilla" }
+		{ "Mocha", new string[] { "Espresso", "Milk", "Mocha", "Cup" } },
+		{ "Hazelnut Latte", new string[] { "Espresso", "Milk", "Hazelnut", "Cup" } },
+		{ "Hot Chocolate", new string[] { "Milk", "Cup", "Mocha"} },
+		{ "Espresso", new string[] { "Espresso", "Cup" } },
+		{ "Latte", new string[] { "Espresso", "Milk", "Cup" } }
 	};
 
 	public override void _Ready()
 	{
+		_orderRequestSprite = GetNode<OrderRequest>("OrderRequest");
 		GenerateRandomOrder();
 	}
 
@@ -48,10 +54,13 @@ public partial class customer : CharacterBody3D
 	private void GenerateRandomOrder()
 	{
 		Random rand = new Random();
-		int index = rand.Next(DrinkOptions.Count);
-		List<string> ingredients = new List<string>(DrinkOptions[index]);
-		Drink drink = new Drink(ingredients);
+		int index = rand.Next(_drinks.Count);
+		List<string> ingredients = new List<string>(_drinks[_drinks.Keys.ElementAt(index)]);
+		Drink drink = new Drink(ingredients, _drinks.Keys.ElementAt(index));
 		Order = new Order(drink);
-		GD.Print("Generated Order: " + string.Join(", ", Order.Drink.Ingredients));
+		GD.Print("Generated Order: " + string.Join(", ", Order.Drink.Ingredients) + " - " + Order.Drink.Name);
+
+		// set sprite
+		_orderRequestSprite.SetOrderSprite(_drinks.Keys.ElementAt(index));
 	}
 }
