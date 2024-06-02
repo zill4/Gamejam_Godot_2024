@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Player : CharacterBody3D
 {
@@ -7,16 +8,25 @@ public partial class Player : CharacterBody3D
 	public float Sensitivity = 0.1f; // Mouse sensitivity
 	private AnimationPlayer _animationPlayer;
 	private bool _canInteract = false;
+	private string _interactableName = "";
 	private Interactable _currentInteractable = null;
 	private Node3D _twistPivotNode;
 	private PlayerHUD _playerHUD;
-
-
+	public PopupBubble _popupBubble; 
+	// ingredients
+    private Dictionary<string, int> _ingredients = new Dictionary<string, int>
+        {
+            { "milk", 0 },
+            { "hazelnut", 0 },
+            { "mocha", 0 },
+            { "espresso", 0 },
+            { "cup", 0 }
+        };
+	
 	public const float Speed = 5.0f;
 	public const float JumpVelocity = 4.5f;
 
 	private AnimationPlayer _animationPlayer2;
-
 
 	// Get the gravity from the project settings to be synced with RigidBody nodes.
 	public float gravity = ProjectSettings.GetSetting("physics/3d/default_gravity").AsSingle();
@@ -25,13 +35,17 @@ public partial class Player : CharacterBody3D
 
 	public override void _Ready()
 	{
+		// popup bubble
+		_popupBubble = GetNode<PopupBubble>("PopupBubble");
+		_popupBubble.Hide();
 		// GEt Player HUD
 		GD.Print($"Player HUD: {this.GetParent().Name}");
+		GD.Print($"Parent Path: {this.GetParent().GetPath()}");
 		foreach (Node child in this.GetParent().GetChildren())
 		{
 			GD.Print($"Child Node Name: {child.Name}");
 		}
-		_playerHUD = GetParent().GetNode<PlayerHUD>("PlayerHUD");
+		_playerHUD = GetParent().GetNode<PlayerHUD>("PlayerHud");
 
 		if (_playerHUD != null)
 		{
@@ -40,7 +54,8 @@ public partial class Player : CharacterBody3D
 		else
 		{
 			GD.Print("PlayerHUD not found!");
-		}       // Animations
+		}
+		// Animations
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer2");
 		_animationPlayer.Play("idle");
@@ -55,7 +70,7 @@ public partial class Player : CharacterBody3D
 		// assuming this is necessary for the override
 		base._Input(@event);
 
-		if (@event is InputEventMouseMotion mouseMotion)
+		if (@event is InputEventMouseMotion mouseMotion && Input.MouseMode == Input.MouseModeEnum.Captured)
 		{
 			// Horizontal rotation (yaw) on TwistPivotNode
 			RotateY(Mathf.DegToRad(-mouseMotion.Relative.X * Sensitivity));
@@ -64,6 +79,53 @@ public partial class Player : CharacterBody3D
 			float newPitchRotation = _twistPivotNode.RotationDegrees.X - (mouseMotion.Relative.Y * Sensitivity);
 			newPitchRotation = Mathf.Clamp(newPitchRotation, -90, 90);
 			_twistPivotNode.RotationDegrees = new Vector3(newPitchRotation, _twistPivotNode.RotationDegrees.Y, _twistPivotNode.RotationDegrees.Z);
+		}
+
+		if (@event.IsActionPressed("interact") && _canInteract)
+		{
+			Interact(_interactableName);
+		}
+	}
+
+    public void ShowPopupBubble()
+    {
+        _popupBubble.Clear(); // Clear any previous content
+        _popupBubble.SetSprite(0, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/milk.png"));
+        _popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/hazelnut.png"));
+        _popupBubble.SetSprite(2, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/beans.png"));
+        _popupBubble.SetSprite(3, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/steamed.png"));
+        _popupBubble.ShowBubble();
+    }
+
+    public void HidePopupBubble()
+    {
+        _popupBubble.HideBubble();
+    }
+
+	public void Interact(string interactableName)
+	{
+		switch (interactableName)
+		{
+			case "barrel":
+				HandleBarrel();
+				break;
+			case "espresso":
+				HandleEspresso();
+				break;
+			case "milk":
+				HandleMilk();
+				break;
+			case "hazelnut":
+				HandleSyrup(interactableName);
+				break;
+			case "mocha":
+				HandleSyrup(interactableName);
+				break;
+			case "cup":
+				HandleCup();
+				break;
+			default:
+				break;
 		}
 	}
 
@@ -103,6 +165,15 @@ public partial class Player : CharacterBody3D
 			Input.MouseMode = Input.MouseModeEnum.Captured;
 		}
 
+    //    if (_popupBubble.Visible)
+    //     {
+    //         Vector3 bubblePosition = GlobalTransform.Origin + new Vector3(0, 2, 0); // Adjust the offset as needed
+    //         Transform3D currentTransform = _popupBubble.GlobalTransform;
+    //         currentTransform.Origin = bubblePosition;
+    //         _popupBubble.GlobalTransform = currentTransform;
+    //     }
+
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}
@@ -122,63 +193,163 @@ public partial class Player : CharacterBody3D
 		// GD.Print("Not crazy entered area. :3");
 		if (body is Area3D interactable)
 		{
-			_canInteract = true;
 			// _currentInteractable = interactable;
 			if (body.GetParent() != null)
 			{
 				Node parent = body.GetParent();
 				string parentName = parent.Name;
 
-				// GD.Print($"Parent Name: {parentName} Type: {parent.GetParent().Name} {body.GetType().FullName}");
+				GD.Print($"Parent Name: {parentName} Type: {parent.GetParent().Name} {body.GetType().FullName}");
 				if (parentName.Contains("barrel", StringComparison.OrdinalIgnoreCase))
 				{
-					HandleBarrel();
+					_canInteract = true;
+					_interactableName = "barrel";
+					_playerHUD.ShowPrompt("Press E to interact with the barrel.");
 
 				}
 				if (parentName.Contains("espresso", StringComparison.OrdinalIgnoreCase))
 				{
-					HandleEspresso();
+					_canInteract = true;
+					_interactableName = "espresso";
+					_playerHUD.ShowPrompt("Press E to interact with the espresso.");
+				}
+				if (parentName.Contains("milk", StringComparison.OrdinalIgnoreCase))
+				{
+					_canInteract = true;
+					_interactableName = "milk";
+					_playerHUD.ShowPrompt("Press E to interact with the milk.");
+				}
+				if (parentName.Contains("syrup", StringComparison.OrdinalIgnoreCase))
+				{
+					_canInteract = true;
+					if (parentName.Contains("hazelnut", StringComparison.OrdinalIgnoreCase))
+					{
+						_interactableName = "hazelnut";
+						_playerHUD.ShowPrompt("Press E to interact with the Hazelnut syrup.");
+					}
+					else if (parentName.Contains("mocha", StringComparison.OrdinalIgnoreCase))
+					{
+						_interactableName = "mocha";
+						_playerHUD.ShowPrompt("Press E to interact with the Mocha syrup.");
+					}
+
+				}
+				if (parentName.Contains("cup", StringComparison.OrdinalIgnoreCase))
+				{
+					_canInteract = true;
+					_interactableName = "cup";
+					_playerHUD.ShowPrompt("Press E to interact with the cup.");
 				}
 			}
 		}
 	}
 
+	public void _on_Area3D_body_exited(Node body)
+	{
+		// Clear Interactable
+		_playerHUD.HidePrompt();
+		_canInteract = false;
+		_interactableName = "";
+		if (body is Interactable interactable && interactable == _currentInteractable)
+		{
+			GD.Print("exit area in Player Class.");
+			_currentInteractable = null;
+		}
+	}
 	private void HandleBarrel()
 	{
+
 		GD.Print("Barrel handle");
-		_playerHUD.ShowPrompt("Press E to interact with the barrel.");
+		ClearIngredients();
+		_popupBubble.Clear(); // Clear any previous content
+	}
+
+	private void HandleCup()
+	{
+		if (_ingredients["cup"] == 0)
+		{
+			AddIngredient("cup");
+			_popupBubble.ShowBubble();
+			_popupBubble.SetSprite(3, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/steamed.png"));
+		}
+		else
+		{
+			GD.Print("cup is full");
+		}
 	}
 
 	private void HandleEspresso()
 	{
 		GD.Print("espresso handle");
-		_playerHUD.ShowPrompt("Press E to interact with the espresso.");
+		if (_ingredients["espresso"] == 0)
+		{
+			AddIngredient("espresso");
+			_popupBubble.ShowBubble();
+        	_popupBubble.SetSprite(2, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/beans.png"));
+		}
+		else
+		{
+			GD.Print("espresso is full");
+		}
 	}
 
 	private void HandleMilk()
 	{
 		GD.Print("milk handle");
-		_playerHUD.ShowPrompt("Press E to interact with the milk.");
-	}
-
-	private void HandleSyrup()
-	{
-		GD.Print("syrupey handle");
-		_playerHUD.ShowPrompt("Press E to interact with the syrup.");
-	}
-
-
-
-	public void _on_Area3D_body_exited(Node body)
-	{
-		if (body is Interactable interactable && interactable == _currentInteractable)
+		if (_ingredients["milk"] == 0)
 		{
-			GD.Print("exit area in Player Class.");
-			_playerHUD.HidePrompt();
-			_canInteract = false;
-			_currentInteractable = null;
+			AddIngredient("milk");
+			_popupBubble.ShowBubble();
+			_popupBubble.SetSprite(0, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/milk.png"));
+		}
+		else
+		{
+			GD.Print("milk is full");
 		}
 	}
+
+	private void HandleSyrup(string syrupType)
+	{
+		GD.Print("syrupey handle");
+
+		if (_ingredients["hazelnut"] == 0 && _ingredients["mocha"] == 0)
+		{
+			_popupBubble.ShowBubble();
+			switch (syrupType)
+			{
+				case "hazelnut":
+        			_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/hazelnut.png"));
+					break;
+				case "mocha":
+        			_popupBubble.SetSprite(1, (Texture2D)GD.Load("res://Assets/sprites/ingredient icons/mocha.png"));
+					break;
+				default:
+					break;
+			}
+			AddIngredient(syrupType);
+		}
+		else
+		{
+			GD.Print("Syrup is full");
+		}
+	}
+
+	public void ClearIngredients()
+	{
+		foreach (var ingredient in _ingredients)
+		{
+			_ingredients[ingredient.Key] = 0;
+		}
+	}
+
+	public void AddIngredient(string ingredient)
+	{
+		if (_ingredients.ContainsKey(ingredient))
+		{
+			_ingredients[ingredient]++;
+		}
+	}
+
 }
 
 

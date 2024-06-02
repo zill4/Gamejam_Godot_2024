@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ocwvwwt1i6f0"]
+[gd_scene load_steps=21 format=3 uid="uid://ocwvwwt1i6f0"]
 
 [ext_resource type="Animation" uid="uid://b7ssfk3mu3ivt" path="res://Assets/animation rework/idle_rework.res" id="1_grfh1"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player.cs" id="1_o84cx"]
@@ -9,8 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://c06yn50jgaebg" path="res://Assets/audio/bounce.mp3" id="7_calyt"]
 [ext_resource type="Texture2D" uid="uid://bauqeuhalrrbf" path="res://Assets/sprites/back arrow.png" id="8_j17vw"]
 [ext_resource type="Script" path="res://scenes/UI/settings.gd" id="8_mll50"]
-[ext_resource type="AudioStream" uid="uid://x413ligkgxh6" path="res://assets/audio/Adobe sound_tic.wav" id="10_7dkoh"]
+[ext_resource type="AudioStream" uid="uid://x413ligkgxh6" path="res://Assets/audio/Adobe sound_tic.wav" id="10_7dkoh"]
 [ext_resource type="PackedScene" uid="uid://c0231snud8pck" path="res://scenes/objects/sharpie_2.tscn" id="11_1dwc3"]
+[ext_resource type="PackedScene" uid="uid://cged4tc16rmh1" path="res://Scenes/objects/PopupBubble.tscn" id="12_ukjou"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avc12"]
 resource_name = "body"
@@ -342,13 +343,16 @@ pitch_scale = 2.0
 bus = &"sfx"
 
 [node name="sharpie2" parent="." instance=ExtResource("11_1dwc3")]
-transform = Transform3D(2.55304, -0.963157, -1.24673, -1.03504, 0.76437, -2.71006, 1.18772, 2.73643, 0.318186, 1.36442, 1.1759, -0.455199)
+transform = Transform3D(2.55304, -0.963152, -1.24672, -1.03504, 0.764368, -2.71006, 1.18772, 2.73644, 0.318187, 1.36442, 1.1759, -0.455199)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sharpie2")
 libraries = {
 "": SubResource("AnimationLibrary_q2c6m")
 }
+
+[node name="PopupBubble" parent="." instance=ExtResource("12_ukjou")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.80121, 0)
 
 [connection signal="timeout" from="AnimationPlayer/jumpTimer" to="." method="_on_jump_timer_timeout"]
 [connection signal="body_entered" from="InteractionTrigger" to="." method="_on_interaction_trigger_body_entered"]

@@ -208,16 +208,16 @@ transform = Transform3D(-2.18557e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.18557e-08, 
 transform = Transform3D(-9.17939e-09, 0, 0.21, 0, 0.21, 0, -0.21, 0, -9.17939e-09, 1.0008, 0.805124, -1.66289)
 
 [node name="cash register" parent="." index="15" instance=ExtResource("7_s018i")]
-transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -3.11928, 0.795601, -1.63326)
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -3.97975, 0.795601, -1.63326)
 
 [node name="milk_steamer" parent="." index="16" instance=ExtResource("9_7loks")]
 transform = Transform3D(-0.7, 0, 1.05697e-07, 0, 0.7, 0, -1.05697e-07, 0, -0.7, -0.279581, 0.799361, -1.6676)
 
 [node name="CoffeeCup" parent="." index="17" instance=ExtResource("10_lnrk7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.62213, 0.800646, -1.68698)
+transform = Transform3D(0.0321958, 0, 0.999482, 0, 1, 0, -0.999482, 0, 0.0321958, 2.04599, 0.800646, -1.68698)
 
-[node name="syrup bottle2" parent="." index="18" instance=ExtResource("7_qp5mn")]
+[node name="syrup hazelnut" parent="." index="18" instance=ExtResource("7_qp5mn")]
 transform = Transform3D(-3.72136e-08, 0, 0.17, 0, 0.17, 0, -0.17, 0, -3.72136e-08, -1.21678, 0.800433, -1.68332)
 
-[node name="syrup bottle3" parent="." index="19" instance=ExtResource("8_nlulf")]
-transform = Transform3D(-7.43093e-09, 0, 0.17, 0, 0.17, 0, -0.17, 0, -7.43093e-09, -2.09696, 0.826934, -1.74202)
+[node name="syrup mocha" parent="." index="19" instance=ExtResource("8_nlulf")]
+transform = Transform3D(-7.43093e-09, 0, 0.17, 0, 0.17, 0, -0.17, 0, -7.43093e-09, -2.53491, 0.826934, -1.74202)

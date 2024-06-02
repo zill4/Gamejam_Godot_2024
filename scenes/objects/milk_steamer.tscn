@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cme6bdgmc4bdu"]
+[gd_scene load_steps=6 format=3 uid="uid://cme6bdgmc4bdu"]
 
-[ext_resource type="PackedScene" uid="uid://bjwbwg2lqh2un" path="res://assets/blender/milk_steamer.glb" id="1_43hxc"]
-[ext_resource type="Texture2D" uid="uid://qf04jr1daayr" path="res://assets/sprites/ingredient icons/milk.png" id="2_7mj0i"]
-[ext_resource type="AudioStream" uid="uid://cegxgnwccqcfr" path="res://assets/audio/milk steam.mp3" id="3_7i24i"]
+[ext_resource type="PackedScene" uid="uid://bjwbwg2lqh2un" path="res://Assets/blender/milk_steamer.glb" id="1_43hxc"]
+[ext_resource type="Texture2D" uid="uid://qf04jr1daayr" path="res://Assets/sprites/ingredient icons/milk.png" id="2_7mj0i"]
+[ext_resource type="AudioStream" uid="uid://cegxgnwccqcfr" path="res://Assets/audio/milk steam.mp3" id="3_7i24i"]
+[ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://Scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="4_tomf6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2u56x"]
 size = Vector3(0.301155, 1.01096, 0.462265)
@@ -23,3 +24,6 @@ texture = ExtResource("2_7mj0i")
 stream = ExtResource("3_7i24i")
 max_distance = 2.0
 bus = &"sfx"
+
+[node name="InteractionTrigger" parent="." index="4" instance=ExtResource("4_tomf6")]
+transform = Transform3D(-0.00371753, 0, -0.499986, 0, 0.5, 0, 0.499986, 0, -0.00371753, 6.29131e-10, -0.291454, -0.0291892)

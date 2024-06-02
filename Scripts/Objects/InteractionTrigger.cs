@@ -3,7 +3,7 @@ using System;
 
 public partial class InteractionTrigger : Area3D
 {
-	private PlayerHUD _playerHUD;
+	// private PlayerHUD _playerHUD;
     private Node _currentInteractable;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -12,8 +12,8 @@ public partial class InteractionTrigger : Area3D
 		Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
         Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
 
-        // Attach to HUD
-		_playerHUD = GetNode<PlayerHUD>("/root/Game/PlayerHud"); 
+        // // Attach to HUD
+		// _playerHUD = GetNode<PlayerHUD>("/root/Game/PlayerHud"); 
 
 	}
 
@@ -31,7 +31,7 @@ public partial class InteractionTrigger : Area3D
     private void OnBodyExited(Node body)
     {
         //  GD.Print($"MEOW entered interact class. {body.Name} {body.GetType()} {body.Owner} {body.GetParent()} {body.GetPath()} {body.GetGroups()}");
-        if (body.IsInGroup("Player"))
+        if (body.GetType() == typeof(Player))
         {
             GD.Print("exited interact class. :3");
             Player player = (Player)body;

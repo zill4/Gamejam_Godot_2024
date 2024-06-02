@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bo6y1k51oq14j"
-path="res://.godot/imported/rat trap.png-e83cfadb2eb0dcfb8c0a0f41a96d1faf.ctex"
+path="res://.godot/imported/rat trap.png-59c73cd4bf84dfdfa48fd1b82263e27b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/rat trap.png"
-dest_files=["res://.godot/imported/rat trap.png-e83cfadb2eb0dcfb8c0a0f41a96d1faf.ctex"]
+source_file="res://Assets/sprites/rat trap.png"
+dest_files=["res://.godot/imported/rat trap.png-59c73cd4bf84dfdfa48fd1b82263e27b.ctex"]
 
 [params]
 

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cged4tc16rmh1"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/PopupBubble.cs" id="1_v1a18"]
+
+[node name="PopupBubble" type="Node3D"]
+script = ExtResource("1_v1a18")
+
+[node name="CupSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72629, 0, 0)
+
+[node name="SyrupSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.564441, 0, 0)
+
+[node name="EspressoSprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.29224, 0, 0)
+
+[node name="MilkSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85549, 0, 0)

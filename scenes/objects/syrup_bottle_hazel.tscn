@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dbn5mey3y176h"]
+[gd_scene load_steps=12 format=3 uid="uid://dbn5mey3y176h"]
 
-[ext_resource type="PackedScene" uid="uid://dk5xpp3nbao5m" path="res://assets/blender/syrup bottle.glb" id="1_q3vtw"]
-[ext_resource type="Texture2D" uid="uid://bnt8o6fquxk6f" path="res://assets/sprites/ingredient icons/hazelnut.png" id="2_5tyb1"]
-[ext_resource type="AudioStream" uid="uid://dbyjjuuju6n27" path="res://assets/audio/godot jam 2024 sfx syrup.mp3" id="3_ny6pn"]
+[ext_resource type="PackedScene" uid="uid://dk5xpp3nbao5m" path="res://Assets/blender/syrup bottle.glb" id="1_q3vtw"]
+[ext_resource type="Texture2D" uid="uid://bnt8o6fquxk6f" path="res://Assets/sprites/ingredient icons/hazelnut.png" id="2_5tyb1"]
+[ext_resource type="AudioStream" uid="uid://dbyjjuuju6n27" path="res://Assets/audio/godot jam 2024 sfx syrup.mp3" id="3_ny6pn"]
+[ext_resource type="PackedScene" uid="uid://dnf0cmi7spb5p" path="res://Scenes/objects/ObjectProperties/InteractionTrigger.tscn" id="4_fftsx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pc0ai"]
 albedo_color = Color(0.690573, 0.333953, 0.0991809, 1)
@@ -108,7 +109,7 @@ shadow_mesh = SubResource("ArrayMesh_0ypp0")
 [sub_resource type="BoxShape3D" id="BoxShape3D_r7jpq"]
 size = Vector3(2.17419, 5.42679, 1.98447)
 
-[node name="syrup bottle2" instance=ExtResource("1_q3vtw")]
+[node name="syrup hazelnut" instance=ExtResource("1_q3vtw")]
 transform = Transform3D(2.22928e-08, 0, -0.17, 0, 0.17, 0, 0.17, 0, 2.22928e-08, 0, 0, 0)
 
 [node name="syrup bottle" parent="." index="0"]
@@ -136,3 +137,6 @@ shape = SubResource("BoxShape3D_r7jpq")
 stream = ExtResource("3_ny6pn")
 max_distance = 2.0
 bus = &"sfx"
+
+[node name="InteractionTrigger" parent="." index="5" instance=ExtResource("4_fftsx")]
+transform = Transform3D(2, 0, 2.84217e-14, 0, 2, 0, -2.84217e-14, 0, 2, 1.54346, 0, -0.497242)
