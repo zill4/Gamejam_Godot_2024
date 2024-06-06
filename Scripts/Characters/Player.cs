@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 public partial class Player : CharacterBody3D
@@ -17,6 +18,10 @@ public partial class Player : CharacterBody3D
 
 	private bool _canDeleteCustomer = false;
 	private customer _currentCustomer = null;
+	private Node3D sharpieNode;
+	private Vector3 sharpieOriginalPosition;
+    private Basis sharpieOriginalRotation;
+
 	// ingredients
 	private Dictionary<string, int> _ingredients = new Dictionary<string, int>
 		{
@@ -52,30 +57,26 @@ public partial class Player : CharacterBody3D
 
 	public override void _Ready()
 	{
+		// sharpie
+		        sharpieNode = GetNode<Node3D>("sharpie2");
+
+        if (sharpieNode != null)
+        {
+            sharpieOriginalPosition = sharpieNode.Transform.Origin;
+            sharpieOriginalRotation = sharpieNode.Transform.Basis;
+        }
+
 		// popup bubble
 		_popupBubble = GetNode<PopupBubble>("PopupBubble");
 		_popupBubble.Hide();
+
 		// GEt Player HUD
-		GD.Print($"Player HUD: {this.GetParent().Name}");
-		GD.Print($"Parent Path: {this.GetParent().GetPath()}");
-		foreach (Node child in this.GetParent().GetChildren())
-		{
-			GD.Print($"Child Node Name: {child.Name}");
-		}
 		_playerHUD = GetParent().GetNode<PlayerHUD>("PlayerHud");
 
-		if (_playerHUD != null)
-		{
-			GD.Print("PlayerHUD found!");
-		}
-		else
-		{
-			GD.Print("PlayerHUD not found!");
-		}
 		// Animations
 		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		_animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer2");
 		_animationPlayer.Play("idle");
+		// _animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer2");
 
 		_twistPivotNode = GetNode<Node3D>("TwistPivot");
 		// Hide the mouse cursor and capture it.
@@ -101,6 +102,11 @@ public partial class Player : CharacterBody3D
 		if (@event.IsActionPressed("interact") && _canInteract)
 		{
 			Interact(_interactableName);
+		}
+
+		if (@event.IsActionPressed("attack"))
+		{
+			AttackAction();
 		}
 
 	}
@@ -146,15 +152,70 @@ public partial class Player : CharacterBody3D
 
 	public void HandlePortal()
 	{
+		var childNode = GetNode<Node3D>("sharpie2");
 		if (this.Scale.X == ShrinkScale)
 		{
 			this.Scale = new Vector3(.5f, .5f, .5f);
+			childNode.Scale = new Vector3(5.0f, 5.0f, 5.0f);
 		}
 		else
 		{
 			this.Scale = new Vector3(ShrinkScale, ShrinkScale, ShrinkScale);
+			childNode.Scale = new Vector3(15.0f, 15.0f, 15.0f);
 		}
 	}
+
+	public void AttackAction()
+	{
+        if (sharpieNode != null)
+        {
+			// sharpieOriginalPosition = sharpieNode.Transform.Origin;
+            // sharpieOriginalRotation = sharpieNode.GlobalTransform.Basis;
+            PerformAttack();
+        }	
+	}
+    private void PerformAttack()
+    {
+        // Rotate and move forward
+        RotateAndMove(sharpieNode, new Vector3(0, 0, -0.5f), new Vector3(90, 0, 0), 0.1f);
+
+        // Wait
+        // yield return new WaitForSeconds(0.1f);
+
+        // Move back
+        RotateAndMove(sharpieNode, new Vector3(0, 0, 0.5f), new Vector3(-90, 0, 0), 0.1f);
+
+        // Wait
+        // yield return new WaitForSeconds(0.1f);
+
+        // Restore original position and rotation
+        sharpieNode.Transform = new Transform3D(sharpieOriginalRotation, sharpieOriginalPosition );
+    }
+
+	private IEnumerator RotateAndMove(Node3D node, Vector3 moveBy, Vector3 rotateBy, float duration)
+    {
+        Vector3 targetPosition = node.Transform.Origin + moveBy;
+ 		Quaternion targetRotationQuat = new Basis().Rotated(Vector3.Right, rotateBy.X)
+                                                   .Rotated(Vector3.Up, rotateBy.Y)
+                                                   .Rotated(Vector3.Forward, rotateBy.Z)
+                                                   .GetRotationQuaternion();
+
+		Basis targetRotation = new Basis(targetRotationQuat) * node.Transform.Basis;
+        double elapsed = 0;
+        while (elapsed < duration)
+        {
+            double t = elapsed / duration;
+
+    			node.Transform = new Transform3D(
+                new Basis(node.Transform.Basis.GetRotationQuaternion().Slerp(targetRotation.GetRotationQuaternion(), (float)t)),
+                node.Transform.Origin.Lerp(targetPosition, (float)t));
+
+            elapsed += GetProcessDeltaTime();
+            yield return null;
+        }
+
+        node.Transform = new Transform3D(targetRotation, targetPosition);
+    }
 
 	public void Interact(string interactableName)
 	{
@@ -195,11 +256,17 @@ public partial class Player : CharacterBody3D
 
 		// Add the gravity.
 		if (!IsOnFloor())
+		{
 			velocity.Y -= gravity * (float)delta;
+			_animationPlayer.Pause();
+		}
 
 		// Handle Jump.
 		if (Input.IsActionJustPressed("ui_accept") && IsOnFloor())
+		{
+			_animationPlayer.Play("jump");
 			velocity.Y = JumpVelocity;
+		}
 
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
@@ -233,20 +300,20 @@ public partial class Player : CharacterBody3D
 		//         currentTransform.Origin = bubblePosition;
 		//         _popupBubble.GlobalTransform = currentTransform;
 		//     }
-
+		if (Velocity.Length() > 0.1  && IsOnFloor())
+		{
+			_animationPlayer.Play("waddle");
+			_animationPlayer.SpeedScale = .50f;
+		}
+		else
+		{
+			_animationPlayer.SpeedScale = 1.0f;
+			_animationPlayer.Play("idle");
+		}
 
 		Velocity = velocity;
 		MoveAndSlide();
 	}
-
-	private void _on_interaction_trigger_body_entered(Node3D body)
-	{
-		if (body.Name == "portal")
-		{
-			GD.Print("please work. :3");
-		}
-	}
-
 
 	// Change these methods to public to allow access from Interactable
 	public void _on_Area3D_body_entered(Node body)
@@ -257,10 +324,11 @@ public partial class Player : CharacterBody3D
 			// _currentInteractable = interactable;
 			if (body.GetParent() != null)
 			{
+				GD.Print($"Entered Player Area, {body.GetParent().Name} {body.Name}");
 				Node parent = body.GetParent();
 				string parentName = parent.Name;
 
-				GD.Print($"Parent Name: {parentName} Type: {parent.GetParent().Name} {body.GetType().FullName}");
+				// GD.Print($"Parent Name: {parentName} Type: {parent.GetParent().Name} {body.GetType().FullName}");
 				if (parentName.Contains("trash", StringComparison.OrdinalIgnoreCase))
 				{
 					_canInteract = true;
@@ -327,7 +395,7 @@ public partial class Player : CharacterBody3D
 		_interactableName = "";
 		if (body is Interactable interactable && interactable == _currentInteractable)
 		{
-			GD.Print("exit area in Player Class.");
+			// GD.Print("exit area in Player Class.");
 			_currentInteractable = null;
 		}
 

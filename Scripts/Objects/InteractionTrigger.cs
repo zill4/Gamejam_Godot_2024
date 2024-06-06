@@ -11,45 +11,29 @@ public partial class InteractionTrigger : Area3D
         // Interaction Trigger setup
 		Connect("body_entered", new Callable(this, nameof(OnBodyEntered)));
         Connect("body_exited", new Callable(this, nameof(OnBodyExited)));
-
-        // // Attach to HUD
-		// _playerHUD = GetNode<PlayerHUD>("/root/Game/PlayerHud"); 
-
 	}
 
     private void OnBodyEntered(Node body)
     {
-        // GD.Print("MEOW entered interact class. :3");
-        if (body.GetType() == typeof(Player))
+        if (body is Player player  && _currentInteractable == null)
         {
-            if (this.GetParent().Name.ToString().Contains("customer"))
-            {
-                GD.Print(":3 its a customer, give em coffeee!!!");
-            }
-
-            Player player = (Player)body;
+            _currentInteractable = player;
             player.CallDeferred(nameof(Player._on_Area3D_body_entered), this);
+        }
+        else
+        {
+            GD.Print($"interacted with {body.Name}");
         }
     }
 
     private void OnBodyExited(Node body)
     {
-        //  GD.Print($"MEOW entered interact class. {body.Name} {body.GetType()} {body.Owner} {body.GetParent()} {body.GetPath()} {body.GetGroups()}");
-        if (body.GetType() == typeof(Player))
+        if (body is Player player && _currentInteractable == player)
         {
             GD.Print("exited interact class. :3");
-            Player player = (Player)body;
+            _currentInteractable = null;
             player.CallDeferred(nameof(Player._on_Area3D_body_exited), this);
         }
     }
 
-
-    public override void _Input(InputEvent @event)
-    {
-        // Check if the player pressed the 'E' key
-        // if (@event is InputEventKey inputEventKey && inputEventKey.Pressed && inputEventKey.Keycode == Key.E)
-        // {
-        //     _currentInteractable.Call("Interact");
-        // }
-    }
 }

@@ -166,6 +166,9 @@ public partial class GameManager : Node
 
 		// THE ORDER OF THIS CODE MATTERS
 
+    	// Give a unique name to each customer
+    	customerInstance.Name = $"Customer_{currentNPCCount}";
+
 		// Set NPC position to spawn point
 		customerInstance.GlobalTransform = _spawnPoint.GlobalTransform;
 

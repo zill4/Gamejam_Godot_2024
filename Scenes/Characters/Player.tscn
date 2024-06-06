@@ -116,7 +116,7 @@ _data = {
 }
 
 [node name="player2" type="CharacterBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 script = ExtResource("1_o84cx")
 
 [node name="Armature" type="Node3D" parent="."]
@@ -128,7 +128,7 @@ bones/0/parent = -1
 bones/0/rest = Transform3D(0.976073, 0.217442, 1.3934e-07, -0.217442, 0.976073, -2.07623e-07, -1.81152e-07, 1.72357e-07, 1, 0.128009, 1.85814, -5.16254e-15)
 bones/0/enabled = true
 bones/0/position = Vector3(0.128009, 1.85814, -5.16254e-15)
-bones/0/rotation = Quaternion(9.55684e-08, 8.06066e-08, -0.109377, 0.994)
+bones/0/rotation = Quaternion(9.55683e-08, 8.06065e-08, -0.109377, 0.994)
 bones/0/scale = Vector3(1, 1, 1)
 bones/1/name = "base"
 bones/1/parent = -1
@@ -142,7 +142,7 @@ bones/2/parent = 1
 bones/2/rest = Transform3D(0.800341, 0.070874, -0.595341, -0.0568663, 0.997485, 0.0423006, 0.596842, 0, 0.802358, 1.86344e-10, 0.0565243, 1.38963e-10)
 bones/2/enabled = true
 bones/2/position = Vector3(1.86344e-10, 0.0565243, 1.38963e-10)
-bones/2/rotation = Quaternion(-0.0111469, -0.31416, -0.0336616, 0.948708)
+bones/2/rotation = Quaternion(-0.0111469, -0.31416, -0.0336617, 0.948708)
 bones/2/scale = Vector3(1, 1, 1)
 
 [node name="hat" type="MeshInstance3D" parent="Armature/Skeleton3D"]
@@ -343,7 +343,7 @@ pitch_scale = 2.0
 bus = &"sfx"
 
 [node name="sharpie2" parent="." instance=ExtResource("11_1dwc3")]
-transform = Transform3D(2.55304, -0.963152, -1.24672, -1.03504, 0.764368, -2.71006, 1.18772, 2.73644, 0.318187, 1.36442, 1.1759, -0.455199)
+transform = Transform3D(4.55566, -1.87898, -0.845829, -0.572231, 0.818053, -4.89932, 1.97953, 4.56073, 0.530311, 1.31109, 0.853844, -0.377944)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
 root_node = NodePath("../sharpie2")
